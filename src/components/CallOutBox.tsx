@@ -23,7 +23,7 @@ export default function CallOutBox({ type = "tip", title, children }: Props) {
       <Icon size={20} className="shrink-0 mt-0.5 text-[#475569]" />
       <div>
         <h4 className="font-semibold text-sm text-[#1e3a5f] mb-0.5">{title}</h4>
-        <p className="text-xs text-[#475569] leading-relaxed">{children}</p>
+        <div className="text-xs text-[#475569] leading-relaxed">{children}</div>
       </div>
     </div>
   );
