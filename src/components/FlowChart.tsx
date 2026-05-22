@@ -98,8 +98,8 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
     const idx = ids.indexOf(id);
     const count = ids.length;
     if (isLR) {
-      const x = padX + lvl * (nodeW + gapX);
-      const colCenter = (count * (nodeW + gapX) - gapX) / 2;
+      // In RTL, level 0 starts on the rightmost side, and goes left as level increases.
+      const x = totalW - padX - nodeW - lvl * (nodeW + gapX);
       const y = padY + idx * (nodeH + gapY);
       return { x, y };
     }
@@ -138,9 +138,9 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
             const tx = to.x + nodeW / 2;
             const ty = to.y;
             if (isLR) {
-              const fxlr = from.x + nodeW;
+              const fxlr = from.x; // Left edge of the source node (pointing leftwards)
               const fylr = from.y + nodeH / 2;
-              const txlr = to.x;
+              const txlr = to.x + nodeW; // Right edge of the destination node
               const tylr = to.y + nodeH / 2;
               const mx = (fxlr + txlr) / 2;
               return (

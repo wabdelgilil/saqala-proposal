@@ -17,7 +17,7 @@ export default function ProcessStep(props: Props) {
   return (
     <div className="relative flex gap-4 no-break">
       {!isLast && (
-        <div className="absolute top-10 left-[19px] w-px h-[calc(100%+8px)] bg-[#d9e0ed]" />
+        <div className="absolute top-10 right-[19px] w-px h-[calc(100%+8px)] bg-[#d9e0ed]" />
       )}
       <div className="flex flex-col items-center">
         <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1e3a5f] text-white text-sm font-bold shrink-0">

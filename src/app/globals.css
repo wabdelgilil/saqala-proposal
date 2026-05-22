@@ -36,11 +36,44 @@
 
 body {
   background: #f1f5f9;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-tajawal), system-ui, -apple-system, sans-serif;
+  counter-reset: page;
 }
 
 @media print {
-  body { background: white; }
-  .no-break { break-inside: avoid; }
-  .page-break { break-before: page; }
+  body {
+    background: white;
+  }
+  
+  .no-break, 
+  table, 
+  tr, 
+  td, 
+  th, 
+  svg, 
+  .bg-white {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  
+  .page-break {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  .cover-bleed {
+    margin: -16mm -18mm !important;
+    height: 297mm !important;
+    width: 210mm !important;
+    max-height: 297mm !important;
+    max-width: 210mm !important;
+    position: relative !important;
+    z-index: 20 !important;
+    background-color: white !important;
+  }
+
+  .page-number::after {
+    content: "صفحة " counter(page);
+  }
 }
+

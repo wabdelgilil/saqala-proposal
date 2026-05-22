@@ -17,60 +17,60 @@ export default function Home() {
     <div className="max-w-[210mm] mx-auto bg-white print:bg-white min-h-screen">
       <CoverPage />
 
-      <div className="px-6 py-8 print:px-[18mm] print:py-[16mm] space-y-10 print:space-y-8">
+      <div className="px-6 py-8 print:px-[18mm] print:py-[16mm] space-y-10 print:space-y-0">
         <div className="print:break-before-page">
           <Section01 />
         </div>
 
-        <hr className="border-t-2 border-blue-600 print:border-blue-600" />
+        <hr className="border-t-2 border-blue-600 print:hidden" />
 
         <div className="print:break-before-page">
           <Section02 />
         </div>
 
-        <hr className="border-t-2 border-blue-600 print:border-blue-600" />
+        <hr className="border-t-2 border-blue-600 print:hidden" />
 
         <div className="print:break-before-page">
           <Section03 />
         </div>
 
-        <hr className="border-t-2 border-blue-600 print:border-blue-600" />
+        <hr className="border-t-2 border-blue-600 print:hidden" />
 
         <div className="print:break-before-page">
           <Section04 />
         </div>
 
-        <hr className="border-t-2 border-blue-600 print:border-blue-600" />
+        <hr className="border-t-2 border-blue-600 print:hidden" />
 
         <div className="print:break-before-page">
           <Section05 />
         </div>
 
-        <hr className="border-t-2 border-blue-600 print:border-blue-600" />
+        <hr className="border-t-2 border-blue-600 print:hidden" />
 
         <div className="print:break-before-page">
           <Section06 />
         </div>
 
-        <hr className="border-t-2 border-blue-600 print:border-blue-600" />
+        <hr className="border-t-2 border-blue-600 print:hidden" />
 
         <div className="print:break-before-page">
           <Section07 />
         </div>
 
-        <hr className="border-t-2 border-blue-600 print:border-blue-600" />
+        <hr className="border-t-2 border-blue-600 print:hidden" />
 
         <div className="print:break-before-page">
           <Section08 />
         </div>
 
-        <hr className="border-t-2 border-blue-600 print:border-blue-600" />
+        <hr className="border-t-2 border-blue-600 print:hidden" />
 
         <div className="print:break-before-page">
           <Section09 />
         </div>
 
-        <hr className="border-t-2 border-blue-600 print:border-blue-600" />
+        <hr className="border-t-2 border-blue-600 print:hidden" />
 
         <div className="print:break-before-page">
           <Section10 />

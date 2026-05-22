@@ -24,7 +24,7 @@ export default function DataTable({ columns, rows, title }: Props) {
           <thead>
             <tr className="bg-[#1e3a5f]">
               {columns.map((col) => (
-                <th key={col.key} className="px-3 py-2.5 text-left font-semibold text-white first:rounded-r-none last:rounded-l-none">
+                <th key={col.key} className="px-3 py-2.5 text-right font-semibold text-white first:rounded-r-none last:rounded-l-none">
                   {col.label}
                 </th>
               ))}
