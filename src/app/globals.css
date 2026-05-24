@@ -47,7 +47,7 @@ body {
   }
 
   /* Strip website cards of borders, shadows and margins in print to look like a clean PDF study */
-  .bg-white.rounded-xl {
+  section > .bg-white.rounded-xl {
     border: none !important;
     box-shadow: none !important;
     background: transparent !important;

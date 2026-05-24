@@ -66,6 +66,7 @@ This document lists all tasks that have been successfully implemented and verifi
     - Designed custom executive headers and footers (thin border separator, document title, company name, and page number) repeating on every page using `position: fixed` and safe positive offsets (`top: 10mm` and `bottom: 10mm`) placed cleanly within the margins.
     - Set `@page` margin to `0` to completely suppress browser-default headers, footers, and URL/page metadata automatically.
     - Applied a strict print margin to the `body` (`margin: 24mm 18mm 20mm 18mm !important`) to guarantee that margins are repeated perfectly on every printed page.
+    - Fixed flowchart card borders and background disappearing in print by changing the print card override selector to target only direct children of sections (`section > .bg-white.rounded-xl`), protecting deep-nested flowchart node elements.
     - Configured z-index layers so that headers/footers are completely hidden on the cover page ([CoverPage.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/components/CoverPage.tsx)) under its solid white background bleed.
     - Verified Next.js production build runs successfully.
 
