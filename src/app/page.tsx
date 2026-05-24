@@ -14,10 +14,22 @@ import Section10 from "@/app/sections/s10-salamat-faniyeen";
 
 export default function Home() {
   return (
-    <div className="max-w-[210mm] mx-auto bg-white print:bg-white min-h-screen">
+    <div className="max-w-[210mm] mx-auto bg-white print:bg-white min-h-screen relative">
+      {/* Custom print header repeating on every page */}
+      <div className="print-header hidden print:flex">
+        <span className="font-extrabold text-[#1e3a5f]">دراسة تأسيس منظومة الصيانة المركزية</span>
+        <span>مجموعة مؤسسات سقالة</span>
+      </div>
+
+      {/* Custom print footer repeating on every page */}
+      <div className="print-footer hidden print:flex">
+        <span>وثيقة سرية &middot; ٢٠٢٦</span>
+        <span className="page-number font-bold text-[#1e3a5f]"></span>
+      </div>
+
       <CoverPage />
 
-      <div className="px-6 py-8 print:px-[18mm] print:py-[16mm] space-y-10 print:space-y-0">
+      <div className="px-6 py-8 print:p-0 print:m-0 space-y-10 print:space-y-0">
         <div className="page-break">
           <Section01 />
         </div>

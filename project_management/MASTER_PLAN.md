@@ -44,6 +44,14 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Center SVG elements (`mx-auto block`) inside their overflow-x-auto wrappers in `FlowChart.tsx` and `SequenceDiagram.tsx` to center simple/narrow diagrams while allowing complex/wide diagrams to fill the viewport and scroll.
   - [x] Confirm clean Next.js production build without any warnings/errors.
 
+- [x] **Task 9: Print Layout Professionalization & Margin Fixes**
+  - [x] Fixed nesting `break-inside: avoid` browser bug by removing `.bg-white.rounded-xl` from the avoidance list, solving the 104-page print explosion.
+  - [x] Removed print margins/padding on the outer content wrapper in `page.tsx` to eliminate double page-margins and squished layouts.
+  - [x] Stripped content cards of borders, rounded corners, shadows, and background colors in print mode to display text, tables, and charts on clean, borderless white paper pages.
+  - [x] Implemented a professional, custom print header and footer repeating on every page (using fixed positioning and negative top/bottom offsets placed exactly inside `@page` margins).
+  - [x] Hid custom headers/footers on the cover page using z-index layering and cover page solid color bleed overrides.
+  - [x] Confirmed clean Next.js production build without any warnings/errors.
+
 ## Section 2: Future Updates
 
 - [ ] Add support for multiple themes (e.g. grayscale print mode toggle)

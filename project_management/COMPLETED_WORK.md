@@ -59,6 +59,13 @@ This document lists all tasks that have been successfully implemented and verifi
     - Replaced ProcessStep blocks with FlowChart in [s07-warsha.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s07-warsha.tsx), [s08-hawkama.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s08-hawkama.tsx), [s09-salamat-mowazafin.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s09-salamat-mowazafin.tsx), and [s10-salamat-faniyeen.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s10-salamat-faniyeen.tsx).
     - Centered the SVGs in the drawing workspace for simple/narrow diagrams using `mx-auto block` in `FlowChart.tsx` and `SequenceDiagram.tsx`, while preserving viewport stretching and standard horizontal scrolling for complex/wide diagrams.
     - Verified compilation via `npm run build` with zero warnings/errors.
+  - **Print Layout Professionalization & Margin Fixes**:
+    - Removed card wrappers (`.bg-white.rounded-xl`) from the `break-inside: avoid` list in [globals.css](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/globals.css). This fixed a critical browser rendering bug where nested elements inside oversized cards caused page-break conflicts, immediately resolving the 104-page print explosion and restoring normal page flow.
+    - Eliminated the double-margin bug by removing the print padding (`print:px-[18mm] print:py-[16mm]`) from the outer container in [page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/page.tsx), allowing the content to utilize the full width of the `@page` printable area (174mm width).
+    - Stripped section cards of web-like styles in print mode (removing grey borders, shadows, rounded corners, and background colors) so that text, tables, and diagrams print directly on clean, borderless white A4 paper.
+    - Designed custom executive headers and footers (thin border separator, document title, company name, and page number) repeating on every page using `position: fixed` and negative offsets (`top: -14mm` and `bottom: -10mm`) placed cleanly within the `@page` margins.
+    - Configured z-index layers so that headers/footers are completely hidden on the cover page ([CoverPage.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/components/CoverPage.tsx)) under its solid white background bleed.
+    - Verified Next.js production build runs successfully.
 
 
 

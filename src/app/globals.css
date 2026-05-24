@@ -26,7 +26,7 @@
 
 @page {
   size: A4;
-  margin: 16mm 18mm;
+  margin: 24mm 18mm 20mm 18mm;
 }
 
 * {
@@ -44,12 +44,28 @@ body {
   body {
     background: white;
   }
+
+  /* Strip website cards of borders, shadows and margins in print to look like a clean PDF study */
+  .bg-white.rounded-xl {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin-bottom: 2rem !important;
+    border-radius: 0 !important;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
   
+  /* Avoid splitting individual critical items, but allow the outer sections to split */
   .no-break, 
   table, 
   tr, 
   svg,
-  .bg-white.rounded-xl {
+  .flowchart-container {
     break-inside: avoid !important;
     page-break-inside: avoid !important;
   }
@@ -65,7 +81,7 @@ body {
   }
 
   .cover-bleed {
-    margin: -16mm -18mm !important;
+    margin: -24mm -18mm -20mm -18mm !important;
     height: 297mm !important;
     width: 210mm !important;
     max-height: 297mm !important;
@@ -73,6 +89,41 @@ body {
     position: relative !important;
     z-index: 20 !important;
     background-color: white !important;
+  }
+
+  /* Custom Print Header and Footer positioning in margins */
+  .print-header {
+    position: fixed;
+    top: -14mm;
+    left: 0;
+    right: 0;
+    height: 10mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 2mm;
+    font-size: 8pt;
+    color: #64748b;
+    z-index: 10;
+    direction: rtl;
+  }
+
+  .print-footer {
+    position: fixed;
+    bottom: -10mm;
+    left: 0;
+    right: 0;
+    height: 10mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #cbd5e1;
+    padding-top: 2mm;
+    font-size: 8pt;
+    color: #64748b;
+    z-index: 10;
+    direction: rtl;
   }
 
   .page-number::after {
