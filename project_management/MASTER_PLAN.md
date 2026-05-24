@@ -41,6 +41,7 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Develop a self-healing layout fallback switcher in `FlowChart.tsx` that automatically overrides `isLR` to `false` (TD/vertical mode) if an LR diagram has too many levels (width > 900px) and a vertical layout would be narrower, saving wide charts (like Offline Mode) from scaling down microscopically.
 - [x] **Task 8: ProcessStep unification with FlowChart**
   - [x] Replace all `<ProcessStep>` blocks in `s06-marahil.tsx`, `s07-warsha.tsx`, `s08-hawkama.tsx`, `s09-salamat-mowazafin.tsx`, and `s10-salamat-faniyeen.tsx` with unified premium `<FlowChart>` components.
+  - [x] Center SVG elements (`mx-auto block`) inside their overflow-x-auto wrappers in `FlowChart.tsx` and `SequenceDiagram.tsx` to center simple/narrow diagrams while allowing complex/wide diagrams to fill the viewport and scroll.
   - [x] Confirm clean Next.js production build without any warnings/errors.
 
 ## Section 2: Future Updates

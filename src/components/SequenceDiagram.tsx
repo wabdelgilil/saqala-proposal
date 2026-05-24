@@ -90,7 +90,7 @@ export default function SequenceDiagram({ participants, steps, title }: Props) {
       <div className="w-full overflow-x-auto">
         <svg
           viewBox={`0 0 ${totalW} ${totalH}`}
-          className="w-full h-auto"
+          className="w-full h-auto mx-auto block"
           style={{ maxWidth: totalW, minWidth: Math.min(totalW, 320) }}
           xmlns="http://www.w3.org/2000/svg"
         >

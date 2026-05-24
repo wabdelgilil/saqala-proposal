@@ -57,6 +57,7 @@ This document lists all tasks that have been successfully implemented and verifi
   - **ProcessStep Unification with FlowChart (Infographic Conversion)**:
     - Replaced the basic circular list steps in [s06-marahil.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s06-marahil.tsx) with the unified SVG-curved [FlowChart](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/components/FlowChart.tsx) component.
     - Replaced ProcessStep blocks with FlowChart in [s07-warsha.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s07-warsha.tsx), [s08-hawkama.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s08-hawkama.tsx), [s09-salamat-mowazafin.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s09-salamat-mowazafin.tsx), and [s10-salamat-faniyeen.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s10-salamat-faniyeen.tsx).
+    - Centered the SVGs in the drawing workspace for simple/narrow diagrams using `mx-auto block` in `FlowChart.tsx` and `SequenceDiagram.tsx`, while preserving viewport stretching and standard horizontal scrolling for complex/wide diagrams.
     - Verified compilation via `npm run build` with zero warnings/errors.
 
 
