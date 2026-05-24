@@ -3,6 +3,7 @@ import SectionHeader from "@/components/SectionHeader";
 import CallOutBox from "@/components/CallOutBox";
 import FlowChart from "@/components/FlowChart";
 import DataTable from "@/components/DataTable";
+import SequenceDiagram from "@/components/SequenceDiagram";
 import {
   challengesRows, challengesCols,
   objectivesRows, objectivesCols,
@@ -196,15 +197,14 @@ export default function Section01() {
       <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
         <SectionHeader icon={ClipboardList} title="إدارة فرق الصيانة في المواقع" />
         <h4 className="text-md font-bold text-slate-700 mb-2">آلية الربط مع المكتب الفني</h4>
-        <FlowChart
-          dir="LR"
-          nodes={[
+        <SequenceDiagram
+          participants={[
             { id: "م", label: "المكتب الفني", icon: "🏗️", color: "navy" },
             { id: "ن", label: "نظام CMMS", icon: "💻", color: "blue" },
-            { id: "ش", label: "المشرف", icon: "👨‍💼" },
-            { id: "ف", label: "الفني", icon: "🔧" },
+            { id: "ش", label: "المشرف", icon: "👨‍💼", color: "slate" },
+            { id: "ف", label: "الفني", icon: "🔧", color: "slate" },
           ]}
-          edges={[
+          steps={[
             { from: "م", to: "ن", label: "تسجيل الأصول والجداول" },
             { from: "ن", to: "ش", label: "إرسال أوامر العمل" },
             { from: "ش", to: "ف", label: "توزيع المهام" },
