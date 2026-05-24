@@ -26,7 +26,7 @@
 
 @page {
   size: A4;
-  margin: 24mm 18mm 20mm 18mm;
+  margin: 0; /* hides default browser margins, headers, and footers */
 }
 
 * {
@@ -43,6 +43,7 @@ body {
 @media print {
   body {
     background: white;
+    margin: 24mm 18mm 20mm 18mm !important; /* applies margins to every printed page */
   }
 
   /* Strip website cards of borders, shadows and margins in print to look like a clean PDF study */
@@ -94,9 +95,9 @@ body {
   /* Custom Print Header and Footer positioning in margins */
   .print-header {
     position: fixed;
-    top: -14mm;
-    left: 0;
-    right: 0;
+    top: 10mm;
+    left: 18mm;
+    right: 18mm;
     height: 10mm;
     display: flex;
     justify-content: space-between;
@@ -111,9 +112,9 @@ body {
 
   .print-footer {
     position: fixed;
-    bottom: -10mm;
-    left: 0;
-    right: 0;
+    bottom: 10mm;
+    left: 18mm;
+    right: 18mm;
     height: 10mm;
     display: flex;
     justify-content: space-between;

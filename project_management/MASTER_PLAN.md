@@ -49,6 +49,7 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Removed print margins/padding on the outer content wrapper in `page.tsx` to eliminate double page-margins and squished layouts.
   - [x] Stripped content cards of borders, rounded corners, shadows, and background colors in print mode to display text, tables, and charts on clean, borderless white paper pages.
   - [x] Implemented a professional, custom print header and footer repeating on every page (using fixed positioning and negative top/bottom offsets placed exactly inside `@page` margins).
+  - [x] Hided browser default headers/footers (URL, title, date, page-count) automatically by setting `@page` margin to `0`, and applied a strict print margin on the `body` (`margin: 24mm 18mm 20mm 18mm !important`) to force margins to repeat on every page.
   - [x] Hid custom headers/footers on the cover page using z-index layering and cover page solid color bleed overrides.
   - [x] Confirmed clean Next.js production build without any warnings/errors.
 
