@@ -48,8 +48,7 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Fixed nesting `break-inside: avoid` browser bug by removing `.bg-white.rounded-xl` from the avoidance list, solving the 104-page print explosion.
   - [x] Removed print margins/padding on the outer content wrapper in `page.tsx` to eliminate double page-margins and squished layouts.
   - [x] Stripped content cards of borders, rounded corners, shadows, and background colors in print mode to display text, tables, and charts on clean, borderless white paper pages.
-  - [x] Implemented a professional, custom print header and footer repeating on every page (using fixed positioning and negative top/bottom offsets placed exactly inside `@page` margins).
-  - [x] Hided browser default headers/footers (URL, title, date, page-count) automatically by setting `@page` margin to `0`, and applied a strict print margin on the `body` (`margin: 24mm 18mm 20mm 18mm !important`) to force margins to repeat on every page.
+  - [x] Configured native `@page` margins of `24mm 18mm 20mm 18mm` (so browser handles page margins natively and repeats them on every page, preventing content overlapping on pages 2+) and positioned header/footer elements via negative offsets (`top: -14mm` and `bottom: -10mm` relative to printable area).
   - [x] Fixed flowchart card borders and background disappearing in print by changing the print card override selector to target only direct children of sections (`section > .bg-white.rounded-xl`), protecting deep-nested flowchart node elements.
   - [x] Hid custom headers/footers on the cover page using z-index layering and cover page solid color bleed overrides.
   - [x] Confirmed clean Next.js production build without any warnings/errors.
