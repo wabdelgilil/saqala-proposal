@@ -160,8 +160,17 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
     maxNodesInLevel = Math.max(maxNodesInLevel, ids.length);
   });
 
-  // Auto-switch direction to LR (vertical layout) if TD is requested but level width is too large (> 3 nodes)
-  const isLR = dir === "LR" || (dir === "TD" && maxNodesInLevel > 3);
+  // Determine initial layout direction
+  let isLR = dir === "LR" || (dir === "TD" && maxNodesInLevel > 3);
+
+  // Calculate estimated widths to prevent horizontal overflow in printing
+  const widthLR = (maxLevel + 1) * (cardW + 120) - 120 + padding * 2;
+  const widthTD = maxNodesInLevel * (cardW + 40) - 40 + padding * 2;
+
+  // Fallback to TD layout (vertical flow) if the LR layout is too wide for A4 printing (> 900px)
+  if (isLR && widthLR > 900 && widthTD < widthLR) {
+    isLR = false;
+  }
 
   // Dynamic spacing based on layout direction to prevent overlapping text and hidden details
   const gapX = isLR ? 120 : 40;
