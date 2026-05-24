@@ -1,7 +1,7 @@
 import { Users, Heart, Shield, BookOpen, Bell, Ambulance, ClipboardCheck, AlertTriangle } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import CallOutBox from "@/components/CallOutBox";
-import ProcessStep from "@/components/ProcessStep";
+import FlowChart from "@/components/FlowChart";
 import DataTable from "@/components/DataTable";
 
 export default function Section09() {
@@ -37,14 +37,21 @@ export default function Section09() {
         </p>
       </div>
 
-      <CallOutBox type="critical" title="مبادئ سلامة الموظفين">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <ProcessStep number={1} title="الوقاية" subtitle="منع الحوادث قبل وقوعها" />
-          <ProcessStep number={2} title="التدريب" subtitle="تأهيل الموظفين للسلامة" />
-          <ProcessStep number={3} title="المعدات" subtitle="توفير معدات الوقاية" />
-          <ProcessStep number={4} title="الاستجابة" subtitle="خطط طوارئ فعالة" />
-        </div>
-      </CallOutBox>
+      <FlowChart
+        title="مبادئ سلامة الموظفين"
+        dir="LR"
+        nodes={[
+          { id: "e1", label: "الوقاية", sub: "منع الحوادث قبل وقوعها", icon: "🛡️", color: "green" },
+          { id: "e2", label: "التدريب", sub: "تأهيل الموظفين للسلامة", icon: "📚", color: "blue" },
+          { id: "e3", label: "المعدات", sub: "توفير معدات الوقاية", icon: "🦺", color: "navy" },
+          { id: "e4", label: "الاستجابة", sub: "خطط طوارئ فعالة", icon: "🚨", color: "amber" },
+        ]}
+        edges={[
+          { from: "e1", to: "e2" },
+          { from: "e2", to: "e3" },
+          { from: "e3", to: "e4" },
+        ]}
+      />
 
       <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
         <SectionHeader icon={Shield} title="معدات الوقاية الشخصية (PPE)" />

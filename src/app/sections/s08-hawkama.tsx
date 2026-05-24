@@ -1,7 +1,7 @@
 import { Shield, FileText, AlertTriangle, CheckCircle, ClipboardCheck, Building2, Users, Eye } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import CallOutBox from "@/components/CallOutBox";
-import ProcessStep from "@/components/ProcessStep";
+import FlowChart from "@/components/FlowChart";
 import DataTable from "@/components/DataTable";
 
 export default function Section08() {
@@ -91,14 +91,21 @@ export default function Section08() {
 
       <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
         <SectionHeader icon={AlertTriangle} title="إجراءات التحقيق في الحوادث" />
-        <CallOutBox type="critical" title="خطوات التحقيق">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <ProcessStep number={1} title="الإبلاغ الفوري" subtitle="إشعار مدير الصيانة" />
-            <ProcessStep number={2} title="تأمين الموقع" subtitle="منع العبث بالأدلة" />
-            <ProcessStep number={3} title="جمع المعلومات" subtitle="شهود — صور — أدلة" />
-            <ProcessStep number={4} title="تحليل الأسباب" subtitle="إجراءات تصحيحية" />
-          </div>
-        </CallOutBox>
+        <FlowChart
+          title="خطوات التحقيق في الحوادث"
+          dir="LR"
+          nodes={[
+            { id: "h1", label: "الإبلاغ الفوري", sub: "إشعار مدير الصيانة", icon: "📢", color: "red" },
+            { id: "h2", label: "تأمين الموقع", sub: "منع العبث بالأدلة", icon: "🚧", color: "amber" },
+            { id: "h3", label: "جمع المعلومات", sub: "شهود — صور — أدلة", icon: "📷", color: "blue" },
+            { id: "h4", label: "تحليل الأسباب", sub: "إجراءات تصحيحية", icon: "🧠", color: "green" },
+          ]}
+          edges={[
+            { from: "h1", to: "h2" },
+            { from: "h2", to: "h3" },
+            { from: "h3", to: "h4" },
+          ]}
+        />
       </div>
     </section>
   );

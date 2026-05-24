@@ -1,7 +1,7 @@
 import { HardHat, AlertTriangle, ClipboardCheck, Users, Shield, BookOpen, FileText, Eye } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import CallOutBox from "@/components/CallOutBox";
-import ProcessStep from "@/components/ProcessStep";
+import FlowChart from "@/components/FlowChart";
 import DataTable from "@/components/DataTable";
 
 export default function Section10() {
@@ -70,11 +70,19 @@ export default function Section10() {
 
       <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
         <SectionHeader icon={Eye} title="التزامات الفنيين والمقاولين" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <ProcessStep number={1} title="الالتزام بإجراءات السلامة" subtitle="بدون استثناء" />
-          <ProcessStep number={2} title="استخدام معدات الوقاية" subtitle="بالشكل الصحيح" />
-          <ProcessStep number={3} title="الإبلاغ عن المخاطر" subtitle="فور اكتشافها" />
-        </div>
+        <FlowChart
+          title="التزامات السلامة الأساسية"
+          dir="LR"
+          nodes={[
+            { id: "o1", label: "الالتزام بإجراءات السلامة", sub: "بدون استثناء", icon: "🛡️", color: "red" },
+            { id: "o2", label: "استخدام معدات الوقاية", sub: "بالشكل الصحيح", icon: "🦺", color: "blue" },
+            { id: "o3", label: "الإبلاغ عن المخاطر", sub: "فور اكتشافها", icon: "📢", color: "amber" },
+          ]}
+          edges={[
+            { from: "o1", to: "o2" },
+            { from: "o2", to: "o3" },
+          ]}
+        />
       </div>
     </section>
   );

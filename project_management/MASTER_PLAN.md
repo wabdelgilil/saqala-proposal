@@ -38,6 +38,10 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Implement dynamic parallel edge offsets and intermediate card bypass curves in `FlowChart.tsx` to prevent overlapping lines and text labels in diagrams with multiple loops between the same nodes (such as the warehouse and work order link).
   - [x] Calculate column and row gaps dynamically based on layout direction (expanding column gap `gapX` to `120` in LR mode), giving connection labels enough room to render fully without clipping behind card boundaries.
   - [x] Create and integrate a premium vertical Sequence Diagram component (`SequenceDiagram.tsx`) for complex loops (replacing the Warehouse-to-Technician flowchart) to display chronological steps, participants, and interactions as clean horizontal arrows, resolving diagram overlap and clutter.
+  - [x] Develop a self-healing layout fallback switcher in `FlowChart.tsx` that automatically overrides `isLR` to `false` (TD/vertical mode) if an LR diagram has too many levels (width > 900px) and a vertical layout would be narrower, saving wide charts (like Offline Mode) from scaling down microscopically.
+- [x] **Task 8: ProcessStep unification with FlowChart**
+  - [x] Replace all `<ProcessStep>` blocks in `s06-marahil.tsx`, `s07-warsha.tsx`, `s08-hawkama.tsx`, `s09-salamat-mowazafin.tsx`, and `s10-salamat-faniyeen.tsx` with unified premium `<FlowChart>` components.
+  - [x] Confirm clean Next.js production build without any warnings/errors.
 
 ## Section 2: Future Updates
 

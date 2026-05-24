@@ -1,7 +1,7 @@
 import { ClipboardCheck, Calendar, BarChart3, Activity, Shield, Leaf, Users, FileText } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import CallOutBox from "@/components/CallOutBox";
-import ProcessStep from "@/components/ProcessStep";
+import FlowChart from "@/components/FlowChart";
 import DataTable from "@/components/DataTable";
 import {
   timelineCols, timelineRows,
@@ -31,14 +31,21 @@ export default function Section06() {
         <DataTable columns={timelineCols} rows={timelineRows} />
       </div>
 
-      <CallOutBox type="goal" title="مراحل المشروع">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <ProcessStep number={1} title="التأسيس" subtitle="2-3 أشهر" />
-          <ProcessStep number={2} title="الإطلاق" subtitle="1-2 شهر" />
-          <ProcessStep number={3} title="التشغيل" subtitle="3-6 أشهر" />
-          <ProcessStep number={4} title="التطوير" subtitle="مستمر" />
-        </div>
-      </CallOutBox>
+      <FlowChart
+        title="مراحل المشروع"
+        dir="LR"
+        nodes={[
+          { id: "s1", label: "التأسيس", sub: "2-3 أشهر", icon: "🏗️", color: "navy" },
+          { id: "s2", label: "الإطلاق", sub: "1-2 شهر", icon: "🚀", color: "blue" },
+          { id: "s3", label: "التشغيل", sub: "3-6 أشهر", icon: "⚙️", color: "green" },
+          { id: "s4", label: "التطوير", sub: "مستمر", icon: "📈", color: "amber" },
+        ]}
+        edges={[
+          { from: "s1", to: "s2" },
+          { from: "s2", to: "s3" },
+          { from: "s3", to: "s4" },
+        ]}
+      />
 
       <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
         <SectionHeader icon={Activity} title="خطة الانتقال (Migration Plan)" />

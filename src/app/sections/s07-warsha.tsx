@@ -1,7 +1,7 @@
 import { Factory, Hammer, Package, Users, Wrench, Shield, BarChart3 } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import CallOutBox from "@/components/CallOutBox";
-import ProcessStep from "@/components/ProcessStep";
+import FlowChart from "@/components/FlowChart";
 import DataTable from "@/components/DataTable";
 
 export default function Section07() {
@@ -48,13 +48,19 @@ export default function Section07() {
         </p>
       </div>
 
-      <CallOutBox type="goal" title="مستويات الورشة المركزية">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <ProcessStep number={1} title="ورشة خفيفة" subtitle="إصلاحات بسيطة" />
-          <ProcessStep number={2} title="ورشة متوسطة" subtitle="صيانة مكثفة" />
-          <ProcessStep number={3} title="ورشة متخصصة" subtitle="أعمال تخصصية" />
-        </div>
-      </CallOutBox>
+      <FlowChart
+        title="مستويات الورشة المركزية"
+        dir="LR"
+        nodes={[
+          { id: "w1", label: "ورشة خفيفة", sub: "إصلاحات بسيطة", icon: "🛠️", color: "blue" },
+          { id: "w2", label: "ورشة متوسطة", sub: "صيانة مكثفة", icon: "⚙️", color: "navy" },
+          { id: "w3", label: "ورشة متخصصة", sub: "أعمال تخصصية", icon: "🔧", color: "green" },
+        ]}
+        edges={[
+          { from: "w1", to: "w2" },
+          { from: "w2", to: "w3" },
+        ]}
+      />
 
       <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
         <SectionHeader icon={Package} title="مستويات الورشة المقترحة" />
@@ -73,14 +79,21 @@ export default function Section07() {
 
       <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
         <SectionHeader icon={BarChart3} title="آلية العمل" />
-        <CallOutBox type="tip" title="سير العمل في الورشة">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <ProcessStep number={1} title="استلام" subtitle="تسجيل الأصل في CMMS" />
-            <ProcessStep number={2} title="تشخيص" subtitle="فحص وتحديد العطل" />
-            <ProcessStep number={3} title="إصلاح" subtitle="تنفيذ الإصلاح" />
-            <ProcessStep number={4} title="تسليم" subtitle="اختبار + توثيق + إرجاع" />
-          </div>
-        </CallOutBox>
+        <FlowChart
+          title="سير العمل في الورشة"
+          dir="LR"
+          nodes={[
+            { id: "step1", label: "استلام", sub: "تسجيل الأصل في CMMS", icon: "📦", color: "navy" },
+            { id: "step2", label: "تشخيص", sub: "فحص وتحديد العطل", icon: "🔍", color: "blue" },
+            { id: "step3", label: "إصلاح", sub: "تنفيذ الإصلاح", icon: "🔧", color: "green" },
+            { id: "step4", label: "تسليم", sub: "اختبار + توثيق + إرجاع", icon: "✅", color: "amber" },
+          ]}
+          edges={[
+            { from: "step1", to: "step2" },
+            { from: "step2", to: "step3" },
+            { from: "step3", to: "step4" },
+          ]}
+        />
       </div>
 
       <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
