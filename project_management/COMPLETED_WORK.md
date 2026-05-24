@@ -30,3 +30,31 @@ This document lists all tasks that have been successfully implemented and verifi
 
 - **Build Validation & QA:**
   - Executed `npm run build` to verify next-generation Turbopack compilation and ensure TypeScript builds without errors.
+
+### 2026-05-24
+- **Flowchart Replacement with High-Fidelity Infographics:**
+  - Analyzed the user's template A4 print design.
+  - Rewrote the dynamic `FlowChart.tsx` component using a hybrid SVG + HTML `<foreignObject>` layout solver to turn all 24 flowcharts throughout the 5 sections into premium infographics.
+  - Implemented automatic coordinate calculations for trees and timelines (horizontal RTL and vertical TD layouts) to distribute cards evenly.
+  - Added smooth curved SVG S-paths (`cubic-bezier` lines) with directional arrow markers to represent relationships between steps.
+  - Implemented connection logic labels (such as "نعم" / "لا") as text badges centered directly on the connection paths.
+  - Retained the gorgeous card styling (circular top icons, step numbers, dividers, and bottom tab badges) while using vector-rendered Arabic fonts (Tajawal) to prevent image pixelation and keep print text sharp.
+  - Removed default description placeholders ('إجراء تفصيلي موثق' and 'خطوة تنفيذية') and made the card elements conditional on sub-labels to prevent text clutter.
+  - Successfully verified building and type checking of the static pages via `npm run build`.
+
+### 2026-05-25
+- **Layout & Legibility Enhancements (A4 Print Optimization):**
+  - **Dynamic Direction Switcher**: Implemented auto-switching to Left-to-Right (LR) layout for wide diagrams in [FlowChart.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/components/FlowChart.tsx) if a TD level contains 4 or more nodes. This rotates wide horizontal diagrams into a vertical stack to prevent content shrinking and overflow in A4 printing.
+  - **Arabic Typography Fixes**: Styled card title and description nodes with `wordBreak: "keep-all", overflowWrap: "break-word"` to preserve word integrity and prevent Arabic words from splitting letter-by-letter.
+  - **Optimized Dimensions & Scaling**: Expanded card node dimensions to `cardW=168, cardH=110` and increased card font sizes (title to `11px`, description to `9px`) to guarantee clean readable text on physical A4 prints.
+  - **Smart Node Connectors**: Redesigned SVG curved connection lines with relative coordinate checks to cleanly route lines in all direction configurations (normal, backward feedback loop, same-column/row), preventing line-card overlaps.
+  - **Robust Page Breaks**: Standardized print dividers in [page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/page.tsx) to use the custom `.page-break` helper and configured `.bg-white.rounded-xl` in [globals.css](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/globals.css) to enforce `break-inside: avoid` on all content cards, ensuring tables, flowcharts, and sections never break in half.
+  - **Overlapping Badge & Arrow Fix**: Simplified card structure by removing the absolute-positioned top circle container and bottom tab badge (which were obstructing the arrowheads). Replaced the step number badge in the center with a single unified icon/emoji container inside the card body, leaving the top and bottom borders clean and flat so arrowheads connect clearly.
+  - **Parallel Edge Offset & Bypass Routing**: Solved overlapping connection lines and labels in diagrams with multiple loops (such as "الربط بين المخازن وأوامر العمل") by dynamically grouping edges and shifting their Bezier control points/midpoints vertically or horizontally. Also added intermediate card bypass routing for spans larger than one level (lvlDiff > 1) to curve lines cleanly around cards instead of crossing through them.
+  - **Dynamic Card Spacing**: Configured `gapX` and `gapY` to calculate dynamically based on the resolved layout direction. By expanding the column gap `gapX` to `120px` in LR mode, we created spacious horizontal gaps between cards, ensuring all text labels and curves render in the open space without clipping behind the card borders.
+  - **Sequence Diagram Integration**: Designed a new UML-style Sequence Diagram component (`SequenceDiagram.tsx`) for `s03-makhazen.tsx`. It replaces the complex loop flowchart with vertical dashed lifelines for participants (Technician, CMMS, Warehouse) and horizontal step arrows flowing chronologically. This completely eliminates crossing paths and overlaps, rendering step numbers and descriptions cleanly.
+
+
+
+
+

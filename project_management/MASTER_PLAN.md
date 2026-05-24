@@ -23,8 +23,24 @@ This master plan tracks the design and layout improvements for the `saqala-propo
 - [x] **Task 5: Verification & PDF Generation Test**
   - [x] Run a test build to ensure static export works (`npm run build`)
   - [x] Verify print styles output via layout checks and emulated prints
+- [x] **Task 6: Professional Infographic Generation & Integration**
+  - [x] Analyze A4 print template layout example with Arabic text and design styling
+  - [x] Overwrite `FlowChart.tsx` component to dynamically render all 24 flowcharts in a gorgeous, high-fidelity corporate infographic style (similar to the template: curved color-coded connections, top title cards, circular icons, step numbers, and bottom tab badges)
+  - [x] Retain perfect vector-rendered Arabic text matching the Cairo/Tajawal executive fonts
+  - [x] Verify Next.js Turbopack build compilation and visual page routing
+- [x] **Task 7: Print Layout Enhancements & FlowChart Optimization**
+  - [x] Implement auto-switching layout to Left-to-Right (LR) in `FlowChart.tsx` if a TD layout contains more than 3 nodes in any level, expanding it vertically instead of horizontally to fit A4 page width.
+  - [x] Enhance Arabic word-wrapping in flowchart nodes using `wordBreak: "keep-all", overflowWrap: "break-word"` to prevent disjointed word splits.
+  - [x] Increase card node font sizes (title to `11px`, subtext to `9px`) and size dimensions to improve printed text readability.
+  - [x] Develop a smart SVG connector router to cleanly connect nodes in all relative directions, avoiding crossing lines.
+  - [x] Apply custom `.page-break` and `break-inside: avoid` rules to section dividers and card wrappers to guarantee no charts, tables, or sections split across pages in A4 print layout.
+  - [x] Simplify card design: remove the overlapping top circle and bottom tab badges, remove the step numbers, and place a single central icon container inside the card body. This ensures arrowheads touch flat boundaries cleanly with zero overlap or layout obstructions.
+  - [x] Implement dynamic parallel edge offsets and intermediate card bypass curves in `FlowChart.tsx` to prevent overlapping lines and text labels in diagrams with multiple loops between the same nodes (such as the warehouse and work order link).
+  - [x] Calculate column and row gaps dynamically based on layout direction (expanding column gap `gapX` to `120` in LR mode), giving connection labels enough room to render fully without clipping behind card boundaries.
+  - [x] Create and integrate a premium vertical Sequence Diagram component (`SequenceDiagram.tsx`) for complex loops (replacing the Warehouse-to-Technician flowchart) to display chronological steps, participants, and interactions as clean horizontal arrows, resolving diagram overlap and clutter.
 
 ## Section 2: Future Updates
 
 - [ ] Add support for multiple themes (e.g. grayscale print mode toggle)
 - [ ] Integrate with automated PDF printing scripts (e.g. Playwright or Puppeteer) for direct A4 generation
+

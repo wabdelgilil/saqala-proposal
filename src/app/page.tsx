@@ -18,61 +18,61 @@ export default function Home() {
       <CoverPage />
 
       <div className="px-6 py-8 print:px-[18mm] print:py-[16mm] space-y-10 print:space-y-0">
-        <div className="print:break-before-page">
+        <div className="page-break">
           <Section01 />
         </div>
 
         <hr className="border-t-2 border-blue-600 print:hidden" />
 
-        <div className="print:break-before-page">
+        <div className="page-break">
           <Section02 />
         </div>
 
         <hr className="border-t-2 border-blue-600 print:hidden" />
 
-        <div className="print:break-before-page">
+        <div className="page-break">
           <Section03 />
         </div>
 
         <hr className="border-t-2 border-blue-600 print:hidden" />
 
-        <div className="print:break-before-page">
+        <div className="page-break">
           <Section04 />
         </div>
 
         <hr className="border-t-2 border-blue-600 print:hidden" />
 
-        <div className="print:break-before-page">
+        <div className="page-break">
           <Section05 />
         </div>
 
         <hr className="border-t-2 border-blue-600 print:hidden" />
 
-        <div className="print:break-before-page">
+        <div className="page-break">
           <Section06 />
         </div>
 
         <hr className="border-t-2 border-blue-600 print:hidden" />
 
-        <div className="print:break-before-page">
+        <div className="page-break">
           <Section07 />
         </div>
 
         <hr className="border-t-2 border-blue-600 print:hidden" />
 
-        <div className="print:break-before-page">
+        <div className="page-break">
           <Section08 />
         </div>
 
         <hr className="border-t-2 border-blue-600 print:hidden" />
 
-        <div className="print:break-before-page">
+        <div className="page-break">
           <Section09 />
         </div>
 
         <hr className="border-t-2 border-blue-600 print:hidden" />
 
-        <div className="print:break-before-page">
+        <div className="page-break">
           <Section10 />
         </div>
       </div>

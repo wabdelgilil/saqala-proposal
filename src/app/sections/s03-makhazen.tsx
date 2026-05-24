@@ -3,6 +3,7 @@ import SectionHeader from "@/components/SectionHeader";
 import CallOutBox from "@/components/CallOutBox";
 import FlowChart from "@/components/FlowChart";
 import DataTable from "@/components/DataTable";
+import SequenceDiagram from "@/components/SequenceDiagram";
 import { storeRulesCols, storeRulesRows } from "@/lib/data-s2";
 
 const challengesCols = [{ key: "n", label: "#" }, { key: "challenge", label: "التحدي" }, { key: "impact", label: "الأثر" }];
@@ -240,20 +241,19 @@ export default function Section03() {
 
       <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
         <SectionHeader icon={TrendingUp} title="الربط بين المخازن وأوامر العمل" />
-        <FlowChart
-          dir="LR"
-          nodes={[
-            { id: "ف", label: "الفني", icon: "🔧" },
+        <SequenceDiagram
+          participants={[
+            { id: "ف", label: "الفني", icon: "🔧", color: "slate" },
             { id: "ن", label: "نظام CMMS", icon: "💻", color: "blue" },
-            { id: "م", label: "المخزن", icon: "📦" },
+            { id: "م", label: "أمين المخزن", icon: "📦", color: "green" },
           ]}
-          edges={[
+          steps={[
             { from: "ف", to: "ن", label: "استلام أمر العمل" },
             { from: "ن", to: "ف", label: "عرض القطع المطلوبة" },
-            { from: "ف", to: "م", label: "طلب صرف" },
-            { from: "م", to: "ن", label: "تسجيل الصرف" },
-            { from: "ن", to: "م", label: "تحديث المخزون" },
-            { from: "ف", to: "ن", label: "إغلاق الأمر" },
+            { from: "ف", to: "م", label: "طلب صرف القطع" },
+            { from: "م", to: "ن", label: "تسجيل صرف القطع" },
+            { from: "ن", to: "م", label: "تحديث المخزون تلقائياً" },
+            { from: "ف", to: "ن", label: "إغلاق أمر العمل بعد الإصلاح" },
           ]}
         />
         <h4 className="text-md font-bold text-slate-700 mt-4 mb-3">دورة العمل</h4>
