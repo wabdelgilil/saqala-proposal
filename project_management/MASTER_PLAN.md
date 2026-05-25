@@ -162,6 +162,12 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Build and compile Next.js production site successfully
   - [x] Delete obsolete duplicate directories `saqala-summary` and `saqala-presentation`
   - [x] Save changes to GitHub
+- [ ] **Task 29: Implement PowerPoint-Style Widescreen Slide Deck (`/pre`)**
+  - [ ] Create `SlideDeck.tsx` component with active slide state and keyboard event listeners
+  - [ ] Convert all 15 presentation slides in `src/app/pre/page.tsx` to 16:9 landscape aspect ratio
+  - [ ] Configure print-media queries to print slides in landscape A4 layout
+  - [ ] Run `npm run build` to confirm compilation success
+  - [ ] Save changes to GitHub
 
 ## Section 2: Future Updates
 
