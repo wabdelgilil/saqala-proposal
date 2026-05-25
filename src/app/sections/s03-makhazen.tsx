@@ -122,7 +122,7 @@ export default function Section03() {
   return (
     <>
       {/* Page 22 */}
-      <A4Page pageNum={29}>
+      <A4Page pageNum={30}>
         <SectionHeader icon={Package} title="نظام إدارة مخازن قطع الغيار" subtitle="إدارة موحدة وفعالة للمخزون في جميع المواقع" />
 
         <div className="space-y-4">
@@ -143,7 +143,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 23 */}
-      <A4Page pageNum={30}>
+      <A4Page pageNum={31}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Target} title="أهداف النظام المركزي للمخازن" />
@@ -161,7 +161,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 24 */}
-      <A4Page pageNum={31}>
+      <A4Page pageNum={32}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Warehouse} title="الهيكل المقترح للمخازن" />
@@ -187,7 +187,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 25 */}
-      <A4Page pageNum={32}>
+      <A4Page pageNum={33}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Database} title="تصنيف قطع الغيار" />
@@ -203,7 +203,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 26 */}
-      <A4Page pageNum={33}>
+      <A4Page pageNum={34}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={ClipboardCheck} title="إدارة المخزون" />
@@ -231,7 +231,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 27 */}
-      <A4Page pageNum={34}>
+      <A4Page pageNum={35}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">متابعة الحركة والجرد</h4>
@@ -266,7 +266,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 27.5 (Work Cycle Steps) */}
-      <A4Page pageNum={35}>
+      <A4Page pageNum={36}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={TrendingUp} title="دورة عمل الصرف وربطه بأمر العمل" />
@@ -276,7 +276,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 28 */}
-      <A4Page pageNum={36}>
+      <A4Page pageNum={37}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={BarChart3} title="العلاقة بين المخازن والمشتريات" />
@@ -318,7 +318,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 29 */}
-      <A4Page pageNum={37}>
+      <A4Page pageNum={38}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={BarChart3} title="النتائج المتوقعة" />

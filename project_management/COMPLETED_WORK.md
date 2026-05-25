@@ -168,16 +168,13 @@ This document lists all tasks that have been successfully implemented and verifi
   - Updated the arrays inside [set_page_numbers.js](file:///C:/Users/wabde/.gemini/antigravity/brain/425f0b71-695c-4137-a294-ec1713d875b9/scratch/set_page_numbers.js) and executed the script to generate a strict, gapless sequence of page numbers from Page 1 to Page 78.
   - Verified static Next.js production compilation runs successfully via `npm run build`.
 
-- **Human Resources Re-evaluation Note Addition:**
-  - Added a re-evaluation note under section 2 conclusion in `الجزء_02_توحيد_الفرق.md` and the full proposal `المشروع_الكامل_منظومة_الصيانة_المركزية.md`.
-  - Added a corresponding `CallOutBox` in `src/app/sections/s02-tawheed.tsx` explaining that the current technician count is a pilot and will be re-evaluated post-launch to add resources as needed.
+- **Human Resources Re-evaluation Note & Fourth Batch of Page Splits:**
+  - Added a re-evaluation note under section 2 conclusion in `الجزء_02_توحيد_الفرق.md` and the full proposal `المشروع_الكامل_منظومة_الصيانة_المركزية.md` specifying that re-evaluation will happen after at least one year of full operation.
+  - Added a corresponding `CallOutBox` in `src/app/sections/s02-tawheed.tsx` detailing the timeline.
+  - Split Page 28 in [s02-tawheed.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s02-tawheed.tsx) into Pages 28 and 29, moving the conclusion block to a new page to resolve the vertical print cutoff.
+  - Split Page 51 in [s05-cmms.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s05-cmms.tsx) into Pages 51 and 52, moving the "إدارة العقود والضمانات" table to a new page to resolve the vertical print cutoff.
+  - Updated the arrays inside [set_page_numbers.js](file:///C:/Users/wabde/.gemini/antigravity/brain/425f0b71-695c-4137-a294-ec1713d875b9/scratch/set_page_numbers.js) and executed the script to generate a strict, gapless sequence of page numbers from Page 1 to Page 80.
   - Verified static Next.js production compilation runs successfully via `npm run build`.
-
-
-
-
-
-
 
 
 

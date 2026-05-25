@@ -352,7 +352,12 @@ export default function Section02() {
               </ul>
             </div>
           </div>
+        </div>
+      </A4Page>
 
+      {/* Page 22 */}
+      <A4Page pageNum={29}>
+        <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Award} title="خلاصة القسم الثاني" />
             <CallOutBox type="goal" title="خلاصة">

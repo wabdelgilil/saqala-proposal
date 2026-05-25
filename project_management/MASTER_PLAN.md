@@ -140,8 +140,13 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Updated page maps in `set_page_numbers.js` and executed script to synchronize sequence to 78 pages.
   - [x] Verified successful build compilation via `npm run build`.
 - [x] **Task 25: Clarify Post-Launch Human Resources Re-evaluation**
-  - [x] Added Post-Launch HR Re-evaluation note to Section 2 conclusion in Markdown study documents.
+  - [x] Added Post-Launch HR Re-evaluation note to Section 2 conclusion in Markdown study documents specifying that re-evaluation will happen after at least one year.
   - [x] Added `CallOutBox` for HR Re-evaluation in the React proposal page (`s02-tawheed.tsx`).
+  - [x] Verified successful build compilation via `npm run build`.
+- [x] **Task 26: Resolve fourth batch of page overflows (Tawheed & CMMS)**
+  - [x] Split Page 28 in `s02-tawheed.tsx` into Pages 28 and 29, moving the conclusion block to a new page to resolve the vertical print cutoff.
+  - [x] Split Page 51 in `s05-cmms.tsx` into Pages 51 and 52, moving the "إدارة العقود والضمانات" table to a new page to resolve the vertical print cutoff.
+  - [x] Updated page maps in `set_page_numbers.js` and executed script to synchronize sequence to 80 pages.
   - [x] Verified successful build compilation via `npm run build`.
 
 ## Section 2: Future Updates
