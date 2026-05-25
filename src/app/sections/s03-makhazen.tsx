@@ -296,7 +296,12 @@ export default function Section03() {
               ]}
             />
           </div>
+        </div>
+      </A4Page>
 
+      {/* Page 28.5 */}
+      <A4Page pageNum={38}>
+        <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -318,7 +323,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 29 */}
-      <A4Page pageNum={38}>
+      <A4Page pageNum={39}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={BarChart3} title="النتائج المتوقعة" />

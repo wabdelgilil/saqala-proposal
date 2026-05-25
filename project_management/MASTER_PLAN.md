@@ -148,6 +148,11 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Split Page 51 in `s05-cmms.tsx` into Pages 51 and 52, moving the "إدارة العقود والضمانات" table to a new page to resolve the vertical print cutoff.
   - [x] Updated page maps in `set_page_numbers.js` and executed script to synchronize sequence to 80 pages.
   - [x] Verified successful build compilation via `npm run build`.
+- [x] **Task 27: Layout Review & Section 3 Split**
+  - [x] Conducted manual layout review of all pages across all 10 sections.
+  - [x] Split Page 37 in `s03-makhazen.tsx` into Page 37 (flowchart) and Page 38 (office role, barcode, and challenges tables) to resolve a vertical print cutoff.
+  - [x] Corrected the mapping of `s04-adawat.tsx` to 8 pages and shifted subsequent page number ranges to maintain a strict continuous sequence from Page 1 to Page 82.
+  - [x] Verified successful build compilation via `npm run build`.
 
 ## Section 2: Future Updates
 
