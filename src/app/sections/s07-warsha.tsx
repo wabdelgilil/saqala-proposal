@@ -41,7 +41,7 @@ export default function Section07() {
   return (
     <>
       {/* Page 52 */}
-      <A4Page pageNum={61}>
+      <A4Page pageNum={66}>
         <SectionHeader icon={Factory} title="إنشاء الورشة المركزية للصيانة" subtitle="بنية تحتية متكاملة لأعمال الصيانة المركزية" />
 
         <div className="space-y-4">
@@ -73,7 +73,7 @@ export default function Section07() {
       </A4Page>
 
       {/* Page 52.5 (Workshop Equipment Table) */}
-      <A4Page pageNum={62}>
+      <A4Page pageNum={67}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Wrench} title="التجهيزات والمعدات الأساسية" />
@@ -83,7 +83,7 @@ export default function Section07() {
       </A4Page>
 
       {/* Page 53 */}
-      <A4Page pageNum={63}>
+      <A4Page pageNum={68}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Users} title="الكادر البشري للورشة" />
@@ -98,7 +98,7 @@ export default function Section07() {
       </A4Page>
 
       {/* Page 53.5 (Workshop Workflow Flowchart) */}
-      <A4Page pageNum={64}>
+      <A4Page pageNum={69}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={BarChart3} title="آلية العمل" />

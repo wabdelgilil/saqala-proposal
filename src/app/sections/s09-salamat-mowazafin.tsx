@@ -31,7 +31,7 @@ export default function Section09() {
   return (
     <>
       {/* Page 56 */}
-      <A4Page pageNum={69}>
+      <A4Page pageNum={74}>
         <SectionHeader icon={Users} title="سلامة الموظفين" subtitle="برنامج شامل للوقاية والتدريب والاستجابة" />
 
         <div className="space-y-4">
@@ -49,7 +49,7 @@ export default function Section09() {
       </A4Page>
 
       {/* Page 56.5 (Employee Safety Principles Flowchart) */}
-      <A4Page pageNum={70}>
+      <A4Page pageNum={75}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">مبادئ سلامة الموظفين</h4>
@@ -73,7 +73,7 @@ export default function Section09() {
       </A4Page>
 
       {/* Page 57 */}
-      <A4Page pageNum={71}>
+      <A4Page pageNum={76}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={BookOpen} title="برامج التدريب والتوعية" />

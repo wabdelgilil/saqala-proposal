@@ -132,6 +132,13 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Split Page 35 in `s04-adawat.tsx` into Pages 38 and 39, isolating the "نظام الحجز للمعدات المشتركة" flowchart.
   - [x] Run `set_page_numbers.js` script to recalculate and write correct sequence of page numbers for all sections (from s01 through s10) to accommodate the new 73-page sequence.
   - [x] Verified successful build compilation via `npm run build`.
+- [x] **Task 24: Resolve third batch of page overflows & optimize flowchart bypass offsets**
+  - [x] Programmed dynamic `bypassOffset` scaling in `FlowChart.tsx` to ensure connection curves clear intermediate cards.
+  - [x] Split Page 1 in `s01-maktab.tsx` into Pages 1 and 2, and Page 2 into Pages 3 and 4 to isolate tables.
+  - [x] Split Page 16 in `s02-tawheed.tsx` into Pages 16 and 17, and Page 18 into Pages 19 and 20 to isolate tables.
+  - [x] Split Page 42 in `s05-cmms.tsx` into Pages 42 and 43 to isolate goals table.
+  - [x] Updated page maps in `set_page_numbers.js` and executed script to synchronize sequence to 78 pages.
+  - [x] Verified successful build compilation via `npm run build`.
 
 ## Section 2: Future Updates
 

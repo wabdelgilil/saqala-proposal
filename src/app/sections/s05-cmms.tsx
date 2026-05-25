@@ -174,7 +174,7 @@ export default function Section05() {
   return (
     <>
       {/* Page 36 */}
-      <A4Page pageNum={41}>
+      <A4Page pageNum={45}>
         <SectionHeader icon={Monitor} title="استخدام نظام CMMS في إدارة الصيانة والأصول" subtitle="Computerized Maintenance Management System" />
 
         <div className="space-y-4">
@@ -193,7 +193,7 @@ export default function Section05() {
       </A4Page>
 
       {/* Page 37 */}
-      <A4Page pageNum={42}>
+      <A4Page pageNum={46}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Database} title="تعريف نظام CMMS" />
@@ -218,7 +218,12 @@ export default function Section05() {
               ]}
             />
           </div>
+        </div>
+      </A4Page>
 
+      {/* Page 37.5 */}
+      <A4Page pageNum={47}>
+        <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Target} title="أهداف نظام CMMS" />
             <DataTable columns={goalsCols} rows={goalsRows} />
@@ -227,7 +232,7 @@ export default function Section05() {
       </A4Page>
 
       {/* Page 38 */}
-      <A4Page pageNum={43}>
+      <A4Page pageNum={48}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Settings2} title="أهمية CMMS في إدارة الصيانة" />
@@ -244,7 +249,7 @@ export default function Section05() {
       </A4Page>
 
       {/* Page 39 */}
-      <A4Page pageNum={44}>
+      <A4Page pageNum={49}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Database} title="أهمية CMMS في إدارة الأصول" />
@@ -259,7 +264,7 @@ export default function Section05() {
       </A4Page>
 
       {/* Page 40 */}
-      <A4Page pageNum={45}>
+      <A4Page pageNum={50}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">تحسين قرارات الإصلاح والاستبدال</h4>
@@ -293,7 +298,7 @@ export default function Section05() {
       </A4Page>
 
       {/* Page 41 */}
-      <A4Page pageNum={46}>
+      <A4Page pageNum={51}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Smartphone} title="تطبيق CMMS الجوال" subtitle="مميزات التطبيق الجوال للفنيين والمشرفين" />
@@ -303,7 +308,7 @@ export default function Section05() {
       </A4Page>
 
       {/* Page 44 */}
-      <A4Page pageNum={47}>
+      <A4Page pageNum={52}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">آلية العمل بدون إنترنت (Offline Mode)</h4>
@@ -332,7 +337,7 @@ export default function Section05() {
       </A4Page>
 
       {/* Page 45 */}
-      <A4Page pageNum={48}>
+      <A4Page pageNum={53}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">آلية العمل بدون اتصال</h4>
@@ -347,7 +352,7 @@ export default function Section05() {
       </A4Page>
 
       {/* Page 46 */}
-      <A4Page pageNum={49}>
+      <A4Page pageNum={54}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Link2} title="التكامل مع الأنظمة الحالية للمجموعة" />
@@ -361,7 +366,7 @@ export default function Section05() {
       </A4Page>
 
       {/* Page 44 */}
-      <A4Page pageNum={50}>
+      <A4Page pageNum={55}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Database} title="خطة ترحيل البيانات (Data Migration)" />
@@ -383,7 +388,7 @@ export default function Section05() {
       </A4Page>
 
       {/* Page 45 */}
-      <A4Page pageNum={51}>
+      <A4Page pageNum={56}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Shield} title="الأمن السيبراني وأمان البيانات" />
@@ -399,7 +404,7 @@ export default function Section05() {
       </A4Page>
 
       {/* Page 48 */}
-      <A4Page pageNum={52}>
+      <A4Page pageNum={57}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={AlertTriangle} title="سيناريوهات تعطل النظام (Business Continuity)" />
@@ -414,7 +419,7 @@ export default function Section05() {
       </A4Page>
 
       {/* Page 49 */}
-      <A4Page pageNum={53}>
+      <A4Page pageNum={58}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">خطة الاستمرارية التشغيلية</h4>
@@ -440,7 +445,7 @@ export default function Section05() {
       </A4Page>
 
       {/* Page 50 */}
-      <A4Page pageNum={54}>
+      <A4Page pageNum={59}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Monitor} title="تكامل CMMS مع أنظمة المباني (BMS/BAS)" />
@@ -469,7 +474,7 @@ export default function Section05() {
       </A4Page>
 
       {/* Page 51 */}
-      <A4Page pageNum={55}>
+      <A4Page pageNum={60}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">خطة التكامل التدريجي</h4>

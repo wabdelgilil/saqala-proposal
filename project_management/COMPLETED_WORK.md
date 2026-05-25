@@ -157,6 +157,17 @@ This document lists all tasks that have been successfully implemented and verifi
   - Run `set_page_numbers.js` script to recalculate and write correct sequence of page numbers for all sections (from s01 through s10) to accommodate the new 73-page sequence.
   - Verified successful build compilation via `npm run build`.
 
+- **Third Batch of Page Overflow Resolutions & Flowchart Arrow Fixes (Office, Tawheed, CMMS):**
+  - Programmed dynamic `bypassOffset` scaling in [FlowChart.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/components/FlowChart.tsx) for bypass connector lines (`lvlDiff > 1`). For `isLR` mode, Y-offset scales to `cardH * 0.7 + 35` to clear intermediate cards vertically. For `!isLR` mode, X-offset is increased to `150` to clear intermediate cards horizontally.
+  - Resolved flowchart feedback loop arrow cutoff under the "مدير الصيانة" card on Page 54 (BMS integration scenario) by curving it underneath the card body.
+  - Split Page 1 in [s01-maktab.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s01-maktab.tsx) into Pages 1 and 2, isolating the challenges table.
+  - Split Page 2 (original) in [s01-maktab.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s01-maktab.tsx) into Pages 3 and 4, isolating the objectives table.
+  - Split Page 16 in [s02-tawheed.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s02-tawheed.tsx) into Pages 16 and 17, isolating the challenges table.
+  - Split Page 18 in [s02-tawheed.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s02-tawheed.tsx) into Pages 19 and 20, isolating the technician database table.
+  - Split Page 42 in [s05-cmms.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s05-cmms.tsx) into Pages 42 and 43, isolating the goals table.
+  - Updated the arrays inside [set_page_numbers.js](file:///C:/Users/wabde/.gemini/antigravity/brain/425f0b71-695c-4137-a294-ec1713d875b9/scratch/set_page_numbers.js) and executed the script to generate a strict, gapless sequence of page numbers from Page 1 to Page 78.
+  - Verified static Next.js production compilation runs successfully via `npm run build`.
+
 
 
 

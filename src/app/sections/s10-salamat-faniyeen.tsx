@@ -35,7 +35,7 @@ export default function Section10() {
   return (
     <>
       {/* Page 58 */}
-      <A4Page pageNum={72}>
+      <A4Page pageNum={77}>
         <SectionHeader icon={HardHat} title="سلامة الفنيين والمقاولين" subtitle="إجراءات ومتطلبات السلامة لفرق الصيانة والمقاولين" />
 
         <div className="space-y-4">
@@ -66,7 +66,7 @@ export default function Section10() {
       </A4Page>
 
       {/* Page 59 */}
-      <A4Page pageNum={73}>
+      <A4Page pageNum={78}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={FileText} title="نظام تقييم الفنيين" />

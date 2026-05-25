@@ -82,7 +82,7 @@ export default function Section04() {
   return (
     <>
       {/* Page 30 */}
-      <A4Page pageNum={34}>
+      <A4Page pageNum={38}>
         <SectionHeader icon={Wrench} title="إدارة العدد والأدوات والمعدات الفنية" subtitle="نظام موحد لإصدار وتتبع وصيانة الأدوات والمعدات" />
 
         <div className="space-y-4">
@@ -99,7 +99,7 @@ export default function Section04() {
       </A4Page>
 
       {/* Page 30.5 (System Objectives) */}
-      <A4Page pageNum={35}>
+      <A4Page pageNum={39}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Target} title="أهداف النظام" />
@@ -126,7 +126,7 @@ export default function Section04() {
       </A4Page>
 
       {/* Page 31 */}
-      <A4Page pageNum={36}>
+      <A4Page pageNum={40}>
         <div className="space-y-4 mt-4">
           <CallOutBox type="goal" title="فلسفة النظام">
             يقوم النظام على إنشاء منظومة مركزية لإدارة العدد والأدوات والمعدات التخصصية وربطها مباشرة بعمليات التشغيل والصيانة، بحيث تتعامل مع الأدوات باعتبارها أصولا تشغيلية وموارد مشتركة وعناصر أساسية لنجاح العمل.
@@ -143,7 +143,7 @@ export default function Section04() {
       </A4Page>
 
       {/* Page 32 */}
-      <A4Page pageNum={37}>
+      <A4Page pageNum={41}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">المعدات المشتركة</h4>
@@ -161,7 +161,7 @@ export default function Section04() {
       </A4Page>
 
       {/* Page 33 */}
-      <A4Page pageNum={38}>
+      <A4Page pageNum={42}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">متابعة الحالة</h4>
@@ -184,7 +184,7 @@ export default function Section04() {
       </A4Page>
 
       {/* Page 33.5 (Shared Equipment Reservation Flowchart) */}
-      <A4Page pageNum={39}>
+      <A4Page pageNum={43}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Settings2} title="نظام الحجز للمعدات المشتركة" />
@@ -208,7 +208,7 @@ export default function Section04() {
       </A4Page>
 
       {/* Page 34 */}
-      <A4Page pageNum={40}>
+      <A4Page pageNum={44}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Monitor} title="الربط مع نظام CMMS" />

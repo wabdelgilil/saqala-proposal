@@ -19,7 +19,7 @@ export default function Section06() {
   return (
     <>
       {/* Page 49 */}
-      <A4Page pageNum={56}>
+      <A4Page pageNum={61}>
         <SectionHeader icon={ClipboardCheck} title="مراحل تنفيذ المشروع وخطة التحول التدريجي" subtitle="من التأسيس إلى التشغيل الكامل" />
         
         <div className="space-y-4">
@@ -37,7 +37,7 @@ export default function Section06() {
       </A4Page>
 
       {/* Page 49.5 (Flowchart) */}
-      <A4Page pageNum={57}>
+      <A4Page pageNum={62}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">مراحل تنفيذ المشروع</h4>
@@ -61,7 +61,7 @@ export default function Section06() {
       </A4Page>
 
       {/* Page 50 */}
-      <A4Page pageNum={58}>
+      <A4Page pageNum={63}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Activity} title="خطة الانتقال (Migration Plan)" />
@@ -81,7 +81,7 @@ export default function Section06() {
       </A4Page>
 
       {/* Page 51 */}
-      <A4Page pageNum={59}>
+      <A4Page pageNum={64}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={ClipboardCheck} title="معايير القبول (Acceptance Criteria)" />
@@ -96,7 +96,7 @@ export default function Section06() {
       </A4Page>
 
       {/* Page 51.5 (Meetings and Reviews) */}
-      <A4Page pageNum={60}>
+      <A4Page pageNum={65}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Users} title="نظام الاجتماعات والتقارير" />

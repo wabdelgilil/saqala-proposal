@@ -104,13 +104,21 @@ export default function Section01() {
               { from: "b1", to: "تحديات" },
             ]}
           />
-
-          <DataTable columns={challengesCols} rows={challengesRows} />
         </div>
       </A4Page>
 
       {/* Page 2 */}
       <A4Page pageNum={2}>
+        <div className="space-y-4 mt-4">
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <h4 className="text-xs font-bold text-slate-700 mb-2">التحديات المتوقعة والحلول</h4>
+            <DataTable columns={challengesCols} rows={challengesRows} />
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 3 */}
+      <A4Page pageNum={3}>
         <div className="space-y-4 mt-4">
           <CallOutBox type="goal" title="الهدف من المكتب الفني">
             بناءً على ما تقدم، تظهر الحاجة إلى إنشاء مكتب فني مركزي لإدارة الصيانة يعمل كمركز تشغيل وتحكم ودعم فني لجميع مواقع المجموعة.
@@ -129,13 +137,22 @@ export default function Section01() {
               ]}
               dir="LR"
             />
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 4 */}
+      <A4Page pageNum={4}>
+        <div className="space-y-4 mt-4">
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <h4 className="text-xs font-bold text-slate-700 mb-2">أهداف ومؤشرات النجاح للمكتب الفني</h4>
             <DataTable columns={objectivesCols} rows={objectivesRows} />
           </div>
         </div>
       </A4Page>
 
       {/* Page 3 */}
-      <A4Page pageNum={3}>
+      <A4Page pageNum={5}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Lightbulb} title="فلسفة المكتب الفني" />
@@ -162,7 +179,7 @@ export default function Section01() {
       </A4Page>
 
       {/* Page 4 */}
-      <A4Page pageNum={4}>
+      <A4Page pageNum={6}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Users} title="الهيكل التشغيلي المقترح" />
@@ -186,7 +203,7 @@ export default function Section01() {
       </A4Page>
 
       {/* Page 5 */}
-      <A4Page pageNum={5}>
+      <A4Page pageNum={7}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">المهام الرئيسية للفريق الفني</h4>
@@ -201,7 +218,7 @@ export default function Section01() {
       </A4Page>
 
       {/* Page 6 */}
-      <A4Page pageNum={6}>
+      <A4Page pageNum={8}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={ClipboardList} title="إدارة فرق الصيانة في المواقع" />
@@ -225,7 +242,7 @@ export default function Section01() {
       </A4Page>
 
       {/* Page 7 */}
-      <A4Page pageNum={7}>
+      <A4Page pageNum={9}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">تصنيف المواقع والفرق المطلوبة</h4>
@@ -239,7 +256,7 @@ export default function Section01() {
       </A4Page>
 
       {/* Page 8 */}
-      <A4Page pageNum={8}>
+      <A4Page pageNum={10}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={ShoppingCart} title="إدارة المشتريات الفنية" />
@@ -255,7 +272,7 @@ export default function Section01() {
       </A4Page>
 
       {/* Page 9 */}
-      <A4Page pageNum={9}>
+      <A4Page pageNum={11}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">سير عمل المشتريات الفنية والاعتمادات</h4>
@@ -279,7 +296,7 @@ export default function Section01() {
       </A4Page>
 
       {/* Page 10 */}
-      <A4Page pageNum={10}>
+      <A4Page pageNum={12}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={FileText} title="إدارة العقود والموردين" />
@@ -289,7 +306,7 @@ export default function Section01() {
       </A4Page>
 
       {/* Page 11 */}
-      <A4Page pageNum={11}>
+      <A4Page pageNum={13}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">شروط العقد الأساسية والمعايير المقترحة</h4>
@@ -304,7 +321,7 @@ export default function Section01() {
       </A4Page>
 
       {/* Page 12 */}
-      <A4Page pageNum={12}>
+      <A4Page pageNum={14}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">بطاقة أداء المقاولين (Contractor Scorecard)</h4>
@@ -322,7 +339,7 @@ export default function Section01() {
       </A4Page>
 
       {/* Page 13 */}
-      <A4Page pageNum={13}>
+      <A4Page pageNum={15}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Activity} title="مصفوفة المسؤوليات (RACI Matrix)" />
@@ -332,7 +349,7 @@ export default function Section01() {
       </A4Page>
 
       {/* Page 14 */}
-      <A4Page pageNum={14}>
+      <A4Page pageNum={16}>
         <div className="space-y-4 mt-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-white rounded-xl border border-slate-200 p-3 shadow-sm">
@@ -354,7 +371,7 @@ export default function Section01() {
       </A4Page>
 
       {/* Page 15 */}
-      <A4Page pageNum={15}>
+      <A4Page pageNum={17}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">آليات ضمان الاستمرارية ومنع الانقطاع</h4>

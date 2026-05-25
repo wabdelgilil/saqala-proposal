@@ -315,7 +315,7 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
             let bypassOffset = 0;
             if (lvlDiff > 1) {
               // Loop/bypass intermediate cards
-              bypassOffset = 70;
+              bypassOffset = isLR ? (cardH * 0.7 + 35) : 150;
             }
 
             const totalOffset = parallelOffset + bypassOffset;

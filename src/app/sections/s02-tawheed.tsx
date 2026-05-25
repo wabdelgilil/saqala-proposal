@@ -135,7 +135,7 @@ export default function Section02() {
   return (
     <>
       {/* Page 14 */}
-      <A4Page pageNum={16}>
+      <A4Page pageNum={18}>
         <SectionHeader icon={Users} title="توحيد فرق الصيانة ضمن منظومة التشغيل المركزية" subtitle="نموذج تشغيلي موحد لجميع فرق الصيانة في المجموعة" />
 
         <div className="space-y-4">
@@ -159,13 +159,21 @@ export default function Section02() {
               { from: "m2", to: "c2" },
             ]}
           />
+        </div>
+      </A4Page>
 
-          <DataTable columns={challengesCols} rows={challengesRows} />
+      {/* Page 14.5 */}
+      <A4Page pageNum={19}>
+        <div className="space-y-4 mt-4">
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <h4 className="text-xs font-bold text-slate-700 mb-2">التحديات والمشاكل التشغيلية الحالية</h4>
+            <DataTable columns={challengesCols} rows={challengesRows} />
+          </div>
         </div>
       </A4Page>
 
       {/* Page 15 */}
-      <A4Page pageNum={17}>
+      <A4Page pageNum={20}>
         <div className="space-y-4 mt-4">
           <CallOutBox type="goal" title="الهدف من التوحيد">
             بناء على ما تقدم، تبرز أهمية إنشاء منظومة تشغيل مركزية موحدة لفرق الصيانة.
@@ -193,7 +201,7 @@ export default function Section02() {
       </A4Page>
 
       {/* Page 16 */}
-      <A4Page pageNum={18}>
+      <A4Page pageNum={21}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Lightbulb} title="فلسفة التشغيل المقترحة" />
@@ -213,7 +221,12 @@ export default function Section02() {
               ]}
             />
           </div>
+        </div>
+      </A4Page>
 
+      {/* Page 16.5 */}
+      <A4Page pageNum={22}>
+        <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Database} title="آلية التشغيل المركزية" />
             <h4 className="text-xs font-bold text-slate-700 mb-2">قاعدة بيانات موحدة للفنيين في CMMS</h4>
@@ -223,7 +236,7 @@ export default function Section02() {
       </A4Page>
 
       {/* Page 17 */}
-      <A4Page pageNum={19}>
+      <A4Page pageNum={23}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Building2} title="تصنيف الفرق الفنية" />
@@ -252,7 +265,7 @@ export default function Section02() {
       </A4Page>
 
       {/* Page 18 */}
-      <A4Page pageNum={20}>
+      <A4Page pageNum={24}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Briefcase} title="توزيع الفرق حسب التخصص" />
@@ -274,7 +287,7 @@ export default function Section02() {
       </A4Page>
 
       {/* Page 19 */}
-      <A4Page pageNum={21}>
+      <A4Page pageNum={25}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Gauge} title="هيكل مستوى الخدمة (SLA Framework)" />
@@ -295,7 +308,7 @@ export default function Section02() {
       </A4Page>
 
       {/* Page 20 */}
-      <A4Page pageNum={22}>
+      <A4Page pageNum={26}>
         <div className="space-y-4 mt-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-white rounded-xl border border-slate-200 p-3 shadow-sm">
@@ -316,7 +329,7 @@ export default function Section02() {
       </A4Page>
 
       {/* Page 20.5 (Challenges and Solutions) */}
-      <A4Page pageNum={23}>
+      <A4Page pageNum={27}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={AlertTriangle} title="التحديات المتوقعة والحلول" />
@@ -326,7 +339,7 @@ export default function Section02() {
       </A4Page>
 
       {/* Page 21 */}
-      <A4Page pageNum={24}>
+      <A4Page pageNum={28}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Clock} title="مصفوفة التصعيد (Escalation Matrix)" />

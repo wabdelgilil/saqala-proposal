@@ -50,7 +50,7 @@ export default function Section08() {
   return (
     <>
       {/* Page 54 */}
-      <A4Page pageNum={65}>
+      <A4Page pageNum={70}>
         <SectionHeader icon={Shield} title="حوكمة السلامة والامتثال للدفاع المدني" subtitle="نظام متكامل لإدارة السلامة المهنية والامتثال التنظيمي" />
 
         <div className="space-y-4">
@@ -77,7 +77,7 @@ export default function Section08() {
       </A4Page>
 
       {/* Page 54.5 (Safety Documents Table) */}
-      <A4Page pageNum={66}>
+      <A4Page pageNum={71}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={FileText} title="الوثائق الأساسية لنظام السلامة" />
@@ -87,7 +87,7 @@ export default function Section08() {
       </A4Page>
 
       {/* Page 55 */}
-      <A4Page pageNum={67}>
+      <A4Page pageNum={72}>
         <div className="space-y-4 mt-4">
           <CallOutBox type="goal" title="نظام تصاريح العمل الآمن (Permit to Work)">
             <DataTable columns={hsePermitCols} rows={hsePermitRows} />
@@ -106,7 +106,7 @@ export default function Section08() {
       </A4Page>
 
       {/* Page 55.5 (Accident Investigation Flowchart) */}
-      <A4Page pageNum={68}>
+      <A4Page pageNum={73}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={AlertTriangle} title="إجراءات التحقيق في الحوادث" />
