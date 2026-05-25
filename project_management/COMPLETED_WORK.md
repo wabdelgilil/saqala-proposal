@@ -184,6 +184,15 @@ This document lists all tasks that have been successfully implemented and verifi
   - Updated the page numbering mapping script [set_page_numbers.js](file:///C:/Users/wabde/.gemini/antigravity/brain/425f0b71-695c-4137-a294-ec1713d875b9/scratch/set_page_numbers.js) and executed it to align all sections into a strict, gapless sequence of page numbers from Page 1 to Page 82.
   - Verified successful production build compilation of the whole project via `npm run build`.
 
+- **Consolidate Proposal, Summary, and Presentation Routes:**
+  - Created `/all` route path containing the Full Technical Study (82 pages).
+  - Created `/sum` route path containing the Executive Summary (15 pages).
+  - Created `/pre` route path containing the Management Presentation (15 pages).
+  - Inserted the HR re-evaluation CallOutBox warning about re-evaluation after one year of full operation on Page 6 (SLA section) of the Executive Summary.
+  - Rewrote the main application root route `/` into a stunning, responsive landing portal designed with modern Arabic typography (Tajawal), glassmorphic styling, subtle animations, and direct links to `/all`, `/sum`, and `/pre`.
+  - Deleted the obsolete duplicate directories `saqala-summary` and `saqala-presentation` since all files are now cleanly unified in `saqala-proposal`.
+  - Ran `npm run build` and verified successful static compilation with zero warnings or errors.
+
 
 
 

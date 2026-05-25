@@ -153,6 +153,15 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Split Page 37 in `s03-makhazen.tsx` into Page 37 (flowchart) and Page 38 (office role, barcode, and challenges tables) to resolve a vertical print cutoff.
   - [x] Corrected the mapping of `s04-adawat.tsx` to 8 pages and shifted subsequent page number ranges to maintain a strict continuous sequence from Page 1 to Page 82.
   - [x] Verified successful build compilation via `npm run build`.
+- [x] **Task 28: Consolidate Proposal, Summary, and Presentation Routes**
+  - [x] Create `/all` route and move the Full Study page component there
+  - [x] Create `/sum` route and move the Executive Summary page component there
+  - [x] Create `/pre` route and implement the Management Presentation page component there
+  - [x] Insert HR re-evaluation note under the field teams SLA section on Page 6 of the Executive Summary
+  - [x] Rewrite root route `/` to serve as a stunning, premium responsive portal to navigate between the 3 routes
+  - [x] Build and compile Next.js production site successfully
+  - [x] Delete obsolete duplicate directories `saqala-summary` and `saqala-presentation`
+  - [x] Save changes to GitHub
 
 ## Section 2: Future Updates
 
