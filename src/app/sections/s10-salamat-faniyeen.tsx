@@ -3,6 +3,7 @@ import SectionHeader from "@/components/SectionHeader";
 import CallOutBox from "@/components/CallOutBox";
 import FlowChart from "@/components/FlowChart";
 import DataTable from "@/components/DataTable";
+import A4Page from "@/components/A4Page";
 
 export default function Section10() {
   const hazCols = [{ key: "hazard", label: "الخطر" }, { key: "risk", label: "المخاطر المحتملة" }, { key: "control", label: "إجراءات التحكم" }];
@@ -32,58 +33,69 @@ export default function Section10() {
   ];
 
   return (
-    <section className="space-y-6 print:space-y-4">
-      <SectionHeader icon={HardHat} title="سلامة الفنيين والمقاولين" subtitle="إجراءات ومتطلبات السلامة لفرق الصيانة والمقاولين" />
+    <>
+      {/* Page 58 */}
+      <A4Page pageNum={72}>
+        <SectionHeader icon={HardHat} title="سلامة الفنيين والمقاولين" subtitle="إجراءات ومتطلبات السلامة لفرق الصيانة والمقاولين" />
 
-      <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
-        <p className="text-slate-700 leading-relaxed">
-          الفنيون والمقاولون هم الأكثر عرضة لمخاطر بيئة العمل. يهدف هذا القسم إلى وضع ضوابط وإجراءات محددة تحميهم وتضمن سلامتهم أثناء أداء مهامهم.
-        </p>
-      </div>
+        <div className="space-y-4">
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-sm">
+            <p className="text-slate-700 leading-relaxed">
+              الفنيون والمقاولون هم الأكثر عرضة لمخاطر بيئة العمل. يهدف هذا القسم إلى وضع ضوابط وإجراءات محددة تحميهم وتضمن سلامتهم أثناء أداء مهامهم.
+            </p>
+          </div>
 
-      <CallOutBox type="critical" title="المخاطر الرئيسية وإجراءات التحكم">
-        <DataTable columns={hazCols} rows={hazRows} />
-      </CallOutBox>
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <SectionHeader icon={AlertTriangle} title="المخاطر الرئيسية وإجراءات التحكم" />
+            <DataTable columns={hazCols} rows={hazRows} />
+          </div>
 
-      <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
-        <SectionHeader icon={ClipboardCheck} title="متطلبات المقاولين" />
-        <CallOutBox type="safety" title="شروط قبول المقاولين">
-          <ul className="list-disc list-inside text-slate-700 space-y-1">
-            <li>شهادة سلامة مهنية سارية للفريق</li>
-            <li>تأمين ضد الحوادث المهنية</li>
-            <li>التزام كامل بإجراءات السلامة للمجموعة</li>
-            <li>تسجيل جميع العاملين في نظام السلامة</li>
-            <li>حضور دورة توعية سلامة قبل بدء العمل</li>
-          </ul>
-        </CallOutBox>
-      </div>
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <SectionHeader icon={ClipboardCheck} title="متطلبات المقاولين" />
+            <CallOutBox type="safety" title="شروط قبول المقاولين">
+              <ul className="list-disc list-inside text-slate-700 space-y-1 text-xs">
+                <li>شهادة سلامة مهنية سارية للفريق</li>
+                <li>تأمين ضد الحوادث المهنية</li>
+                <li>التزام كامل بإجراءات السلامة للمجموعة</li>
+                <li>تسجيل جميع العاملين في نظام السلامة</li>
+                <li>حضور دورة توعية سلامة قبل بدء العمل</li>
+              </ul>
+            </CallOutBox>
+          </div>
+        </div>
+      </A4Page>
 
-      <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
-        <SectionHeader icon={FileText} title="نظام تقييم الفنيين" />
-        <DataTable columns={auditCols} rows={auditRows} />
-      </div>
+      {/* Page 59 */}
+      <A4Page pageNum={73}>
+        <div className="space-y-4 mt-4">
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <SectionHeader icon={FileText} title="نظام تقييم الفنيين" />
+            <DataTable columns={auditCols} rows={auditRows} />
+          </div>
 
-      <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
-        <SectionHeader icon={AlertTriangle} title="سلم المخالفات والعقوبات" />
-        <DataTable columns={penaltyCols} rows={penaltyRows} />
-      </div>
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <SectionHeader icon={AlertTriangle} title="سلم المخالفات والعقوبات" />
+            <DataTable columns={penaltyCols} rows={penaltyRows} />
+          </div>
 
-      <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
-        <SectionHeader icon={Eye} title="التزامات الفنيين والمقاولين" />
-        <FlowChart
-          title="التزامات السلامة الأساسية"
-          dir="LR"
-          nodes={[
-            { id: "o1", label: "الالتزام بإجراءات السلامة", sub: "بدون استثناء", icon: "🛡️", color: "red" },
-            { id: "o2", label: "استخدام معدات الوقاية", sub: "بالشكل الصحيح", icon: "🦺", color: "blue" },
-            { id: "o3", label: "الإبلاغ عن المخاطر", sub: "فور اكتشافها", icon: "📢", color: "amber" },
-          ]}
-          edges={[
-            { from: "o1", to: "o2" },
-            { from: "o2", to: "o3" },
-          ]}
-        />
-      </div>
-    </section>
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <SectionHeader icon={Eye} title="التزامات الفنيين والمقاولين" />
+            <FlowChart
+              title="التزامات السلامة الأساسية"
+              dir="LR"
+              nodes={[
+                { id: "o1", label: "الالتزام بإجراءات السلامة", sub: "بدون استثناء", icon: "🛡️", color: "red" },
+                { id: "o2", label: "استخدام معدات الوقاية", sub: "بالشكل الصحيح", icon: "🦺", color: "blue" },
+                { id: "o3", label: "الإبلاغ عن المخاطر", sub: "فور اكتشافها", icon: "📢", color: "amber" },
+              ]}
+              edges={[
+                { from: "o1", to: "o2" },
+                { from: "o2", to: "o3" },
+              ]}
+            />
+          </div>
+        </div>
+      </A4Page>
+    </>
   );
 }

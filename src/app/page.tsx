@@ -14,80 +14,19 @@ import Section10 from "@/app/sections/s10-salamat-faniyeen";
 
 export default function Home() {
   return (
-    <div className="max-w-[210mm] mx-auto bg-white print:bg-white min-h-screen relative">
-      {/* Custom print header repeating on every page */}
-      <div className="print-header hidden print:flex">
-        <span className="font-extrabold text-[#1e3a5f]">دراسة تأسيس منظومة الصيانة المركزية</span>
-        <span>مجموعة مؤسسات سقالة</span>
-      </div>
-
-      {/* Custom print footer repeating on every page */}
-      <div className="print-footer hidden print:flex">
-        <span>وثيقة سرية &middot; ٢٠٢٦</span>
-        <span className="page-number font-bold text-[#1e3a5f]"></span>
-      </div>
-
+    <div className="w-full bg-[#f1f5f9] min-h-screen relative print:bg-white print:w-auto py-2 print:p-0 print:m-0">
       <CoverPage />
 
-      <div className="px-6 py-8 print:p-0 print:m-0 space-y-10 print:space-y-0">
-        <div className="page-break">
-          <Section01 />
-        </div>
-
-        <hr className="border-t-2 border-blue-600 print:hidden" />
-
-        <div className="page-break">
-          <Section02 />
-        </div>
-
-        <hr className="border-t-2 border-blue-600 print:hidden" />
-
-        <div className="page-break">
-          <Section03 />
-        </div>
-
-        <hr className="border-t-2 border-blue-600 print:hidden" />
-
-        <div className="page-break">
-          <Section04 />
-        </div>
-
-        <hr className="border-t-2 border-blue-600 print:hidden" />
-
-        <div className="page-break">
-          <Section05 />
-        </div>
-
-        <hr className="border-t-2 border-blue-600 print:hidden" />
-
-        <div className="page-break">
-          <Section06 />
-        </div>
-
-        <hr className="border-t-2 border-blue-600 print:hidden" />
-
-        <div className="page-break">
-          <Section07 />
-        </div>
-
-        <hr className="border-t-2 border-blue-600 print:hidden" />
-
-        <div className="page-break">
-          <Section08 />
-        </div>
-
-        <hr className="border-t-2 border-blue-600 print:hidden" />
-
-        <div className="page-break">
-          <Section09 />
-        </div>
-
-        <hr className="border-t-2 border-blue-600 print:hidden" />
-
-        <div className="page-break">
-          <Section10 />
-        </div>
-      </div>
+      <Section01 />
+      <Section02 />
+      <Section03 />
+      <Section04 />
+      <Section05 />
+      <Section06 />
+      <Section07 />
+      <Section08 />
+      <Section09 />
+      <Section10 />
     </div>
   );
 }

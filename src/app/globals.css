@@ -26,7 +26,7 @@
 
 @page {
   size: A4;
-  margin: 24mm 18mm 20mm 18mm;
+  margin: 0; /* hides default browser margins, headers, and footers */
 }
 
 * {
@@ -40,9 +40,57 @@ body {
   counter-reset: page;
 }
 
+/* Screen Mode styles for A4 pages */
+.a4-page {
+  width: 210mm;
+  height: 297mm;
+  max-height: 297mm;
+  padding: 24mm 18mm 20mm 18mm;
+  margin: 2rem auto;
+  background: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cover-bleed {
+  width: 210mm;
+  height: 297mm;
+  max-height: 297mm;
+  margin: 2rem auto;
+  background: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
 @media print {
   body {
-    background: white;
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .a4-page {
+    width: 210mm !important;
+    height: 297mm !important;
+    max-height: 297mm !important;
+    padding: 24mm 18mm 20mm 18mm !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    background: white !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   /* Strip website cards of borders, shadows and margins in print to look like a clean PDF study */
@@ -81,7 +129,7 @@ body {
   }
 
   .cover-bleed {
-    margin: -24mm -18mm -20mm -18mm !important;
+    margin: 0 !important;
     height: 297mm !important;
     width: 210mm !important;
     max-height: 297mm !important;
@@ -89,45 +137,14 @@ body {
     position: relative !important;
     z-index: 20 !important;
     background-color: white !important;
-  }
-
-  /* Custom Print Header and Footer positioning in margins */
-  .print-header {
-    position: fixed;
-    top: -14mm;
-    left: 0;
-    right: 0;
-    height: 10mm;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #cbd5e1;
-    padding-bottom: 2mm;
-    font-size: 8pt;
-    color: #64748b;
-    z-index: 10;
-    direction: rtl;
-  }
-
-  .print-footer {
-    position: fixed;
-    bottom: -10mm;
-    left: 0;
-    right: 0;
-    height: 10mm;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #cbd5e1;
-    padding-top: 2mm;
-    font-size: 8pt;
-    color: #64748b;
-    z-index: 10;
-    direction: rtl;
-  }
-
-  .page-number::after {
-    content: "صفحة " counter(page);
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 }
 

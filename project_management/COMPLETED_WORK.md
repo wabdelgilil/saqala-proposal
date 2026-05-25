@@ -69,6 +69,101 @@ This document lists all tasks that have been successfully implemented and verifi
     - Configured z-index layers so that headers/footers are completely hidden on the cover page ([CoverPage.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/components/CoverPage.tsx)) under its solid white background bleed.
     - Verified Next.js production build runs successfully.
 
+- **Page-by-Page A4 Redesign (Screen & Print WYSIWYG parity):**
+  - Configured `@page { size: A4; margin: 0; }` to suppress default browser page margins and headers/footers in print mode.
+  - Set print margins to `0` for `body` and designed the `.a4-page` container class to act as the page margins using `padding: 24mm 18mm 20mm 18mm`.
+  - Defined the `.a4-page` container with fixed width (`210mm`) and height (`297mm`) with hidden overflow, creating consecutive white pages with shadows on a slate-100 background.
+  - Implemented the reusable `<A4Page>` component in [A4Page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/components/A4Page.tsx) with absolute-positioned headers and footers, showing page numbers on screen and print.
+  - Refactored all 10 sections (`s01` to `s10`) by splitting their content into consecutive `<A4Page>` components, manually pacing content and sizing elements to ensure perfect fitting.
+  - Verified static compilation success with `npm run build`.
+
+- **Site Classification and Vendor Evaluation Table Typo Fixes:**
+  - Corrected imports and table parameters in `s01-maktab.tsx` to pass the correct data arrays (`siteClassRows` and `vendorEvalRows`) to the `<DataTable>` component instead of repeating the column arrays.
+  - Resolved the bug where the "Site Classification" and "Vendor Evaluation" tables were displaying empty data rows.
+  - Verified build compilation using `npm run build` with zero warnings/errors.
+
+- **Content Layout Redistribution & Page Spacing Adjustments:**
+  - Prevented tables from cutting off at page boundaries by relocating the contract table from Page 9 to a newly-inserted Page 10.
+  - Split the overcrowded Page 12, putting the RACI matrix on its own dedicated Page 13 and relocating the legend and succession plan to a newly-inserted Page 14.
+  - Automated offset updates (+2 pages) for all subsequent pages (s02 through s10) using a script.
+  - Verified compilation builds without errors (`npm run build`).
+
+- **Confidential Footer Label Removal:**
+  - Removed "وثيقة سرية · ٢٠٢٦" text from [A4Page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/components/A4Page.tsx) footer.
+  - Left an empty `<span>` placeholder in the footer layout to preserve proper RTL flexbox alignment for page numbers on all pages.
+  - Confirmed build succeeds via `npm run build`.
+
+- **Cover Page Preparer Credit Insertion:**
+  - Removed "CONFIDENTIAL · 2026" label from [CoverPage.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/components/CoverPage.tsx).
+  - Placed "تمت الدراسة وإعدادها بواسطة: وائل عبد الجليل" in its place at the bottom of the cover page.
+  - Verified static Next.js compilation runs successfully via `npm run build`.
+
+- **Flowchart Layout Spacing & Page Overflow Optimization:**
+  - Fixed flowchart layout truncation on Page 48 in [s05-cmms.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s05-cmms.tsx) by moving the 6-level vertical flowchart to a new, dedicated Page 49.
+  - Relocated the emergency kit table from Page 50 to Page 48 to balance content.
+  - Automated page number increment adjustments (+1 offset) for all subsequent pages (s06 through s10) using a script to keep page counters synced up to Page 62.
+  - Verified build compilation successfully with `npm run build`.
+
+- **Cigalah Group Logo Header Integration:**
+  - Copied Cigalah Group logo image from the brain directory to the project's public image assets folder ([cigalah_logo.png](file:///d:/programming/New%20folder%20(2)/saqala-proposal/public/images/cigalah_logo.png)).
+  - Replaced the plain text "مجموعة مؤسسات سقالة" in [A4Page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/components/A4Page.tsx) header on the left with an HTML `<img>` tag referencing the Cigalah Group logo.
+  - Configured styling (`h-6 w-auto object-contain`) to ensure the logo is rendered crisp and sits cleanly in the header line on both screen and printed pages.
+  - Confirmed build succeeds via `npm run build` with zero warnings/errors.
+
+- **Offline Mode Flowchart Layout Separation:**
+  - Resolved flowchart layout truncation on Page 44 in [s05-cmms.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sections/s05-cmms.tsx) by moving the 7-node vertical flowchart `آلية العمل بدون إنترنت (Offline Mode)` to have Page 44 entirely to itself.
+  - Relocated `آلية العمل بدون اتصال` and `دور النظام في التشغيل المركزي` tables to a newly-inserted Page 45.
+  - Automated page number increment adjustments (+1 offset) for all subsequent pages (s06 through s10) using a script to keep page counters synced up to Page 63.
+  - Verified static compilation successfully with `npm run build`.
+
+- **Dynamic Flowchart Vertical Scaling Solver:**
+  - Programmed a layout-aware automatic scaling solver inside [FlowChart.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/components/FlowChart.tsx) based on node hierarchy depth (`maxLevel`).
+  - Automatically scales down vertical cards to `cardH=80` and spacing to `gapY=35` for 6 levels, and `cardH=75` with `gapY=30` for 7+ levels, reducing total SVG height from `990px/1150px` to `735px/785px`.
+  - Resolved flowchart cutoff bugs on Page 44 (Offline Mode) and Page 50 (Business Continuity) while preserving standard sizes for simpler diagrams.
+  - Verified successful compilation via `npm run build`.
+
+- **Flowchart Layout Optimization & Dynamic Label Backgrounds:**
+  - Expanded the vertical layout fallback threshold from `900px` to `1000px` in `FlowChart.tsx` to allow medium-sized flowcharts to remain horizontal (`isLR`).
+  - Configured dynamic column gap spacing (`resolvedGapX = 80px` for maxLevel <= 3) to render compact flowcharts horizontally, saving vertical page space.
+  - Successfully resolved flowchart cutoff bugs on Page 51 (Integration Scenario) and Page 19 (Dispatch Team) by keeping them horizontal.
+  - Programmed dynamic background rectangle sizing for connection labels based on text length to prevent background clipping on wide Arabic text (e.g. "إنذار تلقائي").
+  - Confirmed build succeeds via `npm run build` with zero warnings/errors.
+
+- **Feedback Loop Label Shifting for Bypass Edges:**
+  - Added a cubic Bezier coordinate interpolation helper `getBezierPoint` to compute exact path coordinates.
+  - Used `getBezierPoint` to calculate labels `labelX` and `labelY` positions.
+  - Dynamically shifted the interpolation factor `t` to `0.8` (feedback loops) and `0.2` (forward loops) for any edges with `lvlDiff > 1` (bypass curves).
+  - Resolved label overlapping under "مدير الصيانة" block on Page 51, placing the "إغلاق" (Close) label cleanly in the gap between "مدير الصيانة" and "نظام CMMS".
+  - Verified static compilation successfully via `npm run build`.
+
+- **Page-by-Page Overflow Resolution by Splitting Pages:**
+  - Split Page 53 in `s06-marahil.tsx` into Pages 53 and 54, isolating the "مراحل المشروع" flowchart.
+  - Split Page 56 in `s06-marahil.tsx` into Pages 56 and 57, isolating meetings/reviews and fixing a reports header typo from "الالتقارير الدورية" to "التقارير الدورية".
+  - Split Page 58 in `s07-warsha.tsx` into Pages 58 and 59, isolating the "التجهيزات والمعدات الأساسية" table.
+  - Split Page 60 in `s07-warsha.tsx` into Pages 60 and 61, isolating the "سير العمل في الورشة" flowchart.
+  - Split Page 62 in `s08-hawkama.tsx` into Pages 62 and 63, isolating the safety documents table.
+  - Split Page 64 in `s08-hawkama.tsx` into Pages 64 and 65, isolating the accident investigation flowchart.
+  - Split Page 66 in `s09-salamat-mowazafin.tsx` into Pages 66 and 67, isolating the employee safety principles flowchart.
+  - Developed and ran `set_page_numbers.js` script to recalculate and write correct sequence of page numbers for all sections (from s01 through s10) to accommodate the newly inserted pages (up to Page 70).
+  - Verified successful compilation build using `npm run build` with zero warnings/errors.
+
+- **Second Batch of Page Overflow Resolutions (Tawheed, Makhazen, Adawat):**
+  - Set `dir="LR"` on "فرق تشغيل مركزية متحركة" flowchart on Page 19 in `s02-tawheed.tsx`, reducing its height and fixing Page 19.
+  - Split Page 22 in `s02-tawheed.tsx` into Pages 22 and 23, moving the challenges table.
+  - Split Page 29 in `s03-makhazen.tsx` into Pages 30 and 31, moving the work cycle table.
+  - Programmed dynamic card & gap scaling solver inside `FlowChart.tsx` for horizontal (LR) layouts with tall columns (`maxNodesInLevel` >= 5), dynamically reducing card height to `75px` / `80px` / `90px` to fit inside margins.
+  - Split Page 32 in `s04-adawat.tsx` into Pages 32 and 33, isolating the "أهداف النظام" flowchart.
+  - Split Page 35 in `s04-adawat.tsx` into Pages 38 and 39, isolating the "نظام الحجز للمعدات المشتركة" flowchart.
+  - Run `set_page_numbers.js` script to recalculate and write correct sequence of page numbers for all sections (from s01 through s10) to accommodate the new 73-page sequence.
+  - Verified successful build compilation via `npm run build`.
+
+
+
+
+
+
+
+
 
 
 

@@ -93,12 +93,30 @@ function autoColor(label: string): "navy" | "blue" | "green" | "amber" | "red" |
   return "slate";
 }
 
+const getBezierPoint = (
+  t: number,
+  p0: { x: number; y: number },
+  p1: { x: number; y: number },
+  p2: { x: number; y: number },
+  p3: { x: number; y: number }
+) => {
+  const mt = 1 - t;
+  const mt3 = mt * mt * mt;
+  const mt2t = 3 * mt * mt * t;
+  const mtt2 = 3 * mt * t * t;
+  const t3 = t * t * t;
+  return {
+    x: mt3 * p0.x + mt2t * p1.x + mtt2 * p2.x + t3 * p3.x,
+    y: mt3 * p0.y + mt2t * p1.y + mtt2 * p2.y + t3 * p3.y,
+  };
+};
+
 export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
   const uid = useId().replace(/:/g, "");
 
   // Dimensions of each card
   const cardW = 168;
-  const cardH = 110;
+  let cardH = 110;
   const padding = 40;
 
   // Map to resolve levels
@@ -163,18 +181,42 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
   // Determine initial layout direction
   let isLR = dir === "LR" || (dir === "TD" && maxNodesInLevel > 3);
 
+  // Dynamic spacing based on layout direction and depth to prevent overlapping/clipping
+  const resolvedGapX = maxLevel <= 3 ? 80 : 120;
+
   // Calculate estimated widths to prevent horizontal overflow in printing
-  const widthLR = (maxLevel + 1) * (cardW + 120) - 120 + padding * 2;
+  const widthLR = (maxLevel + 1) * (cardW + resolvedGapX) - resolvedGapX + padding * 2;
   const widthTD = maxNodesInLevel * (cardW + 40) - 40 + padding * 2;
 
-  // Fallback to TD layout (vertical flow) if the LR layout is too wide for A4 printing (> 900px)
-  if (isLR && widthLR > 900 && widthTD < widthLR) {
+  // Fallback to TD layout (vertical flow) if the LR layout is too wide for A4 printing (> 1000px)
+  if (isLR && widthLR > 1000 && widthTD < widthLR) {
     isLR = false;
   }
 
-  // Dynamic spacing based on layout direction to prevent overlapping text and hidden details
-  const gapX = isLR ? 120 : 40;
-  const gapY = isLR ? 40 : 50;
+  // Dynamic spacing and card sizing based on layout direction and depth to prevent overlapping/clipping
+  let gapY = isLR ? 40 : 50;
+  if (isLR) {
+    if (maxNodesInLevel >= 7) {
+      cardH = 75;
+      gapY = 20;
+    } else if (maxNodesInLevel === 6) {
+      cardH = 80;
+      gapY = 25;
+    } else if (maxNodesInLevel === 5) {
+      cardH = 90;
+      gapY = 30;
+    }
+  } else {
+    if (maxLevel >= 6) {
+      cardH = 75;
+      gapY = 30;
+    } else if (maxLevel === 5) {
+      cardH = 80;
+      gapY = 35;
+    }
+  }
+
+  const gapX = isLR ? resolvedGapX : 40;
 
   // Calculate SVG total width and height
   const totalW = isLR
@@ -295,8 +337,17 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
                 const cy2 = ty + totalOffset;
 
                 pathD = `M ${fx} ${fy} C ${ctrlX} ${cy1}, ${ctrlX} ${cy2}, ${tx} ${ty}`;
-                labelX = ctrlX;
-                labelY = (cy1 + cy2) / 2;
+                
+                const t = lvlDiff > 1 ? 0.2 : 0.5;
+                const pt = getBezierPoint(
+                  t,
+                  { x: fx, y: fy },
+                  { x: ctrlX, y: cy1 },
+                  { x: ctrlX, y: cy2 },
+                  { x: tx, y: ty }
+                );
+                labelX = pt.x;
+                labelY = pt.y;
               } else if (fromPos.x < toPos.x) {
                 // Backward flow: left to right (feedback loop)
                 const fx = fromPos.x + cardW;
@@ -309,8 +360,17 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
                 const cy2 = ty + totalOffset;
 
                 pathD = `M ${fx} ${fy} C ${fx + 25} ${cy1}, ${tx - 25} ${cy2}, ${tx} ${ty}`;
-                labelX = ctrlX;
-                labelY = (cy1 + cy2) / 2;
+                
+                const t = lvlDiff > 1 ? 0.8 : 0.5;
+                const pt = getBezierPoint(
+                  t,
+                  { x: fx, y: fy },
+                  { x: fx + 25, y: cy1 },
+                  { x: tx - 25, y: cy2 },
+                  { x: tx, y: ty }
+                );
+                labelX = pt.x;
+                labelY = pt.y;
               } else {
                 // Same column: vertical flow
                 const fx = fromPos.x + cardW / 2;
@@ -323,15 +383,33 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
                   const ty = toPos.y;
                   const ctrlY = (fy + ty) / 2;
                   pathD = `M ${fx} ${fy} C ${cx1} ${ctrlY}, ${cx2} ${ctrlY}, ${tx} ${ty}`;
-                  labelX = (cx1 + cx2) / 2;
-                  labelY = ctrlY;
+                  
+                  const t = lvlDiff > 1 ? 0.2 : 0.5;
+                  const pt = getBezierPoint(
+                    t,
+                    { x: fx, y: fy },
+                    { x: cx1, y: ctrlY },
+                    { x: cx2, y: ctrlY },
+                    { x: tx, y: ty }
+                  );
+                  labelX = pt.x;
+                  labelY = pt.y;
                 } else {
                   const fy = fromPos.y;
                   const ty = toPos.y + cardH;
                   const ctrlY = (fy + ty) / 2;
                   pathD = `M ${fx} ${fy} C ${cx1} ${ctrlY}, ${cx2} ${ctrlY}, ${tx} ${ty}`;
-                  labelX = (cx1 + cx2) / 2;
-                  labelY = ctrlY;
+                  
+                  const t = lvlDiff > 1 ? 0.8 : 0.5;
+                  const pt = getBezierPoint(
+                    t,
+                    { x: fx, y: fy },
+                    { x: cx1, y: ctrlY },
+                    { x: cx2, y: ctrlY },
+                    { x: tx, y: ty }
+                  );
+                  labelX = pt.x;
+                  labelY = pt.y;
                 }
               }
             } else {
@@ -348,8 +426,17 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
                 const cx2 = tx + totalOffset;
 
                 pathD = `M ${fx} ${fy} C ${cx1} ${ctrlY}, ${cx2} ${ctrlY}, ${tx} ${ty}`;
-                labelX = (cx1 + cx2) / 2;
-                labelY = ctrlY;
+                
+                const t = lvlDiff > 1 ? 0.2 : 0.5;
+                const pt = getBezierPoint(
+                  t,
+                  { x: fx, y: fy },
+                  { x: cx1, y: ctrlY },
+                  { x: cx2, y: ctrlY },
+                  { x: tx, y: ty }
+                );
+                labelX = pt.x;
+                labelY = pt.y;
               } else if (fromPos.y > toPos.y) {
                 // Backward flow: bottom to top
                 const fx = fromPos.x + cardW / 2;
@@ -362,8 +449,17 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
                 const cx2 = tx + totalOffset;
 
                 pathD = `M ${fx} ${fy} C ${cx1} ${fy - 25}, ${cx2} ${ty + 25}, ${tx} ${ty}`;
-                labelX = (cx1 + cx2) / 2;
-                labelY = ctrlY;
+                
+                const t = lvlDiff > 1 ? 0.8 : 0.5;
+                const pt = getBezierPoint(
+                  t,
+                  { x: fx, y: fy },
+                  { x: cx1, y: fy - 25 },
+                  { x: cx2, y: ty + 25 },
+                  { x: tx, y: ty }
+                );
+                labelX = pt.x;
+                labelY = pt.y;
               } else {
                 // Same row: horizontal flow
                 const fy = fromPos.y + cardH / 2;
@@ -377,15 +473,33 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
                   const tx = toPos.x + cardW;
                   const ctrlX = (fx + tx) / 2;
                   pathD = `M ${fx} ${fy} C ${ctrlX} ${cy1}, ${ctrlX} ${cy2}, ${tx} ${ty}`;
-                  labelX = ctrlX;
-                  labelY = (cy1 + cy2) / 2;
+                  
+                  const t = lvlDiff > 1 ? 0.2 : 0.5;
+                  const pt = getBezierPoint(
+                    t,
+                    { x: fx, y: fy },
+                    { x: ctrlX, y: cy1 },
+                    { x: ctrlX, y: cy2 },
+                    { x: tx, y: ty }
+                  );
+                  labelX = pt.x;
+                  labelY = pt.y;
                 } else {
                   const fx = fromPos.x + cardW;
                   const tx = toPos.x;
                   const ctrlX = (fx + tx) / 2;
                   pathD = `M ${fx} ${fy} C ${ctrlX} ${cy1}, ${ctrlX} ${cy2}, ${tx} ${ty}`;
-                  labelX = ctrlX;
-                  labelY = (cy1 + cy2) / 2;
+                  
+                  const t = lvlDiff > 1 ? 0.8 : 0.5;
+                  const pt = getBezierPoint(
+                    t,
+                    { x: fx, y: fy },
+                    { x: ctrlX, y: cy1 },
+                    { x: ctrlX, y: cy2 },
+                    { x: tx, y: ty }
+                  );
+                  labelX = pt.x;
+                  labelY = pt.y;
                 }
               }
             }
@@ -404,27 +518,35 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
                 {/* Connection Label (like "نعم" / "لا") */}
                 {edge.label && (
                   <g>
-                    <rect
-                      x={labelX - 14}
-                      y={labelY - 7}
-                      width={28}
-                      height={14}
-                      rx={4}
-                      fill="#f8fafc"
-                      stroke="#e2e8f0"
-                      strokeWidth={1}
-                    />
-                    <text
-                      x={labelX}
-                      y={labelY + 3.5}
-                      textAnchor="middle"
-                      fill="#64748b"
-                      fontSize={8}
-                      fontWeight="bold"
-                      className="font-sans"
-                    >
-                      {edge.label}
-                    </text>
+                    {(() => {
+                      const textLen = edge.label.length;
+                      const rectW = Math.max(28, textLen * 6 + 8);
+                      return (
+                        <>
+                          <rect
+                            x={labelX - rectW / 2}
+                            y={labelY - 8}
+                            width={rectW}
+                            height={16}
+                            rx={4}
+                            fill="#f8fafc"
+                            stroke="#e2e8f0"
+                            strokeWidth={1}
+                          />
+                          <text
+                            x={labelX}
+                            y={labelY + 3}
+                            textAnchor="middle"
+                            fill="#64748b"
+                            fontSize={8}
+                            fontWeight="bold"
+                            className="font-sans"
+                          >
+                            {edge.label}
+                          </text>
+                        </>
+                      );
+                    })()}
                   </g>
                 )}
               </g>

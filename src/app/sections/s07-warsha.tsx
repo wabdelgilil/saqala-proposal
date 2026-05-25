@@ -1,8 +1,8 @@
 import { Factory, Hammer, Package, Users, Wrench, Shield, BarChart3 } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
-import CallOutBox from "@/components/CallOutBox";
 import FlowChart from "@/components/FlowChart";
 import DataTable from "@/components/DataTable";
+import A4Page from "@/components/A4Page";
 
 export default function Section07() {
   const wsLevelCols = [{ key: "level", label: "المستوى" }, { key: "desc", label: "الوصف" }, { key: "work", label: "الأعمال" }];
@@ -39,67 +39,87 @@ export default function Section07() {
   ];
 
   return (
-    <section className="space-y-6 print:space-y-4">
-      <SectionHeader icon={Factory} title="إنشاء الورشة المركزية للصيانة" subtitle="بنية تحتية متكاملة لأعمال الصيانة المركزية" />
+    <>
+      {/* Page 52 */}
+      <A4Page pageNum={61}>
+        <SectionHeader icon={Factory} title="إنشاء الورشة المركزية للصيانة" subtitle="بنية تحتية متكاملة لأعمال الصيانة المركزية" />
 
-      <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
-        <p className="text-slate-700 leading-relaxed">
-          إنشاء ورشة مركزية للصيانة يهدف إلى توفير بنية تحتية متكاملة تدعم أعمال الصيانة التي يصعب تنفيذها في المواقع، وتعمل كمركز لإصلاح وتأهيل المعدات والأجهزة.
-        </p>
-      </div>
+        <div className="space-y-4">
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-sm">
+            <p className="text-slate-700 leading-relaxed">
+              إنشاء ورشة مركزية للصيانة يهدف إلى توفير بنية تحتية متكاملة تدعم أعمال الصيانة التي يصعب تنفيذها في المواقع، وتعمل كمركز لإصلاح وتأهيل المعدات والأجهزة.
+            </p>
+          </div>
 
-      <FlowChart
-        title="مستويات الورشة المركزية"
-        dir="LR"
-        nodes={[
-          { id: "w1", label: "ورشة خفيفة", sub: "إصلاحات بسيطة", icon: "🛠️", color: "blue" },
-          { id: "w2", label: "ورشة متوسطة", sub: "صيانة مكثفة", icon: "⚙️", color: "navy" },
-          { id: "w3", label: "ورشة متخصصة", sub: "أعمال تخصصية", icon: "🔧", color: "green" },
-        ]}
-        edges={[
-          { from: "w1", to: "w2" },
-          { from: "w2", to: "w3" },
-        ]}
-      />
+          <FlowChart
+            title="مستويات الورشة المركزية"
+            dir="LR"
+            nodes={[
+              { id: "w1", label: "ورشة خفيفة", sub: "إصلاحات بسيطة", icon: "🛠️", color: "blue" },
+              { id: "w2", label: "ورشة متوسطة", sub: "صيانة مكثفة", icon: "⚙️", color: "navy" },
+              { id: "w3", label: "ورشة متخصصة", sub: "أعمال تخصصية", icon: "🔧", color: "green" },
+            ]}
+            edges={[
+              { from: "w1", to: "w2" },
+              { from: "w2", to: "w3" },
+            ]}
+          />
 
-      <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
-        <SectionHeader icon={Package} title="مستويات الورشة المقترحة" />
-        <DataTable columns={wsLevelCols} rows={wsLevelRows} />
-      </div>
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <SectionHeader icon={Package} title="مستويات الورشة المقترحة" />
+            <DataTable columns={wsLevelCols} rows={wsLevelRows} />
+          </div>
+        </div>
+      </A4Page>
 
-      <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
-        <SectionHeader icon={Wrench} title="التجهيزات والمعدات الأساسية" />
-        <DataTable columns={wsEquipCols} rows={wsEquipRows} />
-      </div>
+      {/* Page 52.5 (Workshop Equipment Table) */}
+      <A4Page pageNum={62}>
+        <div className="space-y-4 mt-4">
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <SectionHeader icon={Wrench} title="التجهيزات والمعدات الأساسية" />
+            <DataTable columns={wsEquipCols} rows={wsEquipRows} />
+          </div>
+        </div>
+      </A4Page>
 
-      <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
-        <SectionHeader icon={Users} title="الكادر البشري للورشة" />
-        <DataTable columns={wsStaffCols} rows={wsStaffRows} />
-      </div>
+      {/* Page 53 */}
+      <A4Page pageNum={63}>
+        <div className="space-y-4 mt-4">
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <SectionHeader icon={Users} title="الكادر البشري للورشة" />
+            <DataTable columns={wsStaffCols} rows={wsStaffRows} />
+          </div>
 
-      <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
-        <SectionHeader icon={BarChart3} title="آلية العمل" />
-        <FlowChart
-          title="سير العمل في الورشة"
-          dir="LR"
-          nodes={[
-            { id: "step1", label: "استلام", sub: "تسجيل الأصل في CMMS", icon: "📦", color: "navy" },
-            { id: "step2", label: "تشخيص", sub: "فحص وتحديد العطل", icon: "🔍", color: "blue" },
-            { id: "step3", label: "إصلاح", sub: "تنفيذ الإصلاح", icon: "🔧", color: "green" },
-            { id: "step4", label: "تسليم", sub: "اختبار + توثيق + إرجاع", icon: "✅", color: "amber" },
-          ]}
-          edges={[
-            { from: "step1", to: "step2" },
-            { from: "step2", to: "step3" },
-            { from: "step3", to: "step4" },
-          ]}
-        />
-      </div>
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <SectionHeader icon={Shield} title="قواعد السلامة في الورشة" />
+            <DataTable columns={wsSafetyCols} rows={wsSafetyRows} />
+          </div>
+        </div>
+      </A4Page>
 
-      <div className="bg-white rounded-xl border border-slate-200 p-6 print:p-4 shadow-sm">
-        <SectionHeader icon={Shield} title="قواعد السلامة في الورشة" />
-        <DataTable columns={wsSafetyCols} rows={wsSafetyRows} />
-      </div>
-    </section>
+      {/* Page 53.5 (Workshop Workflow Flowchart) */}
+      <A4Page pageNum={64}>
+        <div className="space-y-4 mt-4">
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <SectionHeader icon={BarChart3} title="آلية العمل" />
+            <FlowChart
+              title="سير العمل في الورشة"
+              dir="LR"
+              nodes={[
+                { id: "step1", label: "استلام", sub: "تسجيل الأصل في CMMS", icon: "📦", color: "navy" },
+                { id: "step2", label: "تشخيص", sub: "فحص وتحديد العطل", icon: "🔍", color: "blue" },
+                { id: "step3", label: "إصلاح", sub: "تنفيذ الإصلاح", icon: "🔧", color: "green" },
+                { id: "step4", label: "تسليم", sub: "اختبار + توثيق + إرجاع", icon: "✅", color: "amber" },
+              ]}
+              edges={[
+                { from: "step1", to: "step2" },
+                { from: "step2", to: "step3" },
+                { from: "step3", to: "step4" },
+              ]}
+            />
+          </div>
+        </div>
+      </A4Page>
+    </>
   );
 }
