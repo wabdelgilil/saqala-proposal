@@ -1,5 +1,6 @@
-import { Factory, Hammer, Package, Users, Wrench, Shield, BarChart3 } from "lucide-react";
+import { Factory, Hammer, Package, Users, Wrench, Shield, BarChart3, ClipboardCheck } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
+import CallOutBox from "@/components/CallOutBox";
 import FlowChart from "@/components/FlowChart";
 import DataTable from "@/components/DataTable";
 import A4Page from "@/components/A4Page";
@@ -41,7 +42,7 @@ export default function Section07() {
   return (
     <>
       {/* Page 52 */}
-      <A4Page pageNum={70}>
+      <A4Page pageNum={118}>
         <SectionHeader icon={Factory} title="إنشاء الورشة المركزية للصيانة" subtitle="بنية تحتية متكاملة لأعمال الصيانة المركزية" />
 
         <div className="space-y-4">
@@ -73,7 +74,7 @@ export default function Section07() {
       </A4Page>
 
       {/* Page 52.5 (Workshop Equipment Table) */}
-      <A4Page pageNum={71}>
+      <A4Page pageNum={119}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Wrench} title="التجهيزات والمعدات الأساسية" />
@@ -83,7 +84,7 @@ export default function Section07() {
       </A4Page>
 
       {/* Page 53 */}
-      <A4Page pageNum={72}>
+      <A4Page pageNum={120}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Users} title="الكادر البشري للورشة" />
@@ -98,7 +99,7 @@ export default function Section07() {
       </A4Page>
 
       {/* Page 53.5 (Workshop Workflow Flowchart) */}
-      <A4Page pageNum={73}>
+      <A4Page pageNum={121}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={BarChart3} title="آلية العمل" />
@@ -117,6 +118,191 @@ export default function Section07() {
                 { from: "step3", to: "step4" },
               ]}
             />
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 74 - Form 16: Workshop Device Calibration Form */}
+      <A4Page pageNum={122}>
+        <div className="space-y-4 mt-4">
+          <SectionHeader icon={ClipboardCheck} title="النموذج ١٦: بطاقة أصل ومعايرة أجهزة الورشة" subtitle="نموذج توثيق وتتبع معايرة أجهزة القياس والاختبار بالورشة المركزية" />
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-xs">
+            <div className="border border-slate-300 rounded-lg overflow-hidden">
+              <div className="bg-slate-100 p-2 border-b border-slate-300 font-bold text-center">
+                بطاقة معايرة جهاز قياس واختبار (Calibration Certificate Card)
+              </div>
+              <table className="w-full text-right text-[10px] border-collapse">
+                <tbody>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <td className="p-2 font-bold border-l border-slate-200 w-1/4">اسم الجهاز / الموديل:</td>
+                    <td className="p-2 border-l border-slate-200 w-1/4">جهاز قياس متعدد الرقمي (Fluke 87V)</td>
+                    <td className="p-2 font-bold border-l border-slate-200 w-1/4">الرقم التسلسلي (S/N):</td>
+                    <td className="p-2">FLK-87V-987654</td>
+                  </tr>
+                  <tr className="border-b border-slate-200">
+                    <td className="p-2 font-bold border-l border-slate-200">الرمز التعريفي للأصل:</td>
+                    <td className="p-2 border-l border-slate-200 text-blue-700 font-bold font-mono">EQ-WS-MULT-001</td>
+                    <td className="p-2 font-bold border-l border-slate-200">تاريخ المعايرة الحالية:</td>
+                    <td className="p-2 text-green-700 font-bold">٢٠٢٦/٠٥/١٥</td>
+                  </tr>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <td className="p-2 font-bold border-l border-slate-200">الجهة المعايرة:</td>
+                    <td className="p-2 border-l border-slate-200">مختبر المعايرة الوطني المعتمد</td>
+                    <td className="p-2 font-bold border-l border-slate-200">تاريخ المعايرة القادمة:</td>
+                    <td className="p-2 text-red-700 font-bold">٢٠٢٧/٠٥/١٤ (سنوي)</td>
+                  </tr>
+                  <tr className="border-b border-slate-200">
+                    <td className="p-2 font-bold border-l border-slate-200">نسبة الانحراف المقيسة:</td>
+                    <td className="p-2 border-l border-slate-200 text-green-700 font-mono">±0.05% (ضمن الحدود المقبولة)</td>
+                    <td className="p-2 font-bold border-l border-slate-200">حالة الجهاز النهائية:</td>
+                    <td className="p-2 text-green-600 font-bold">🟢 صالح للاستخدام والمعايرة</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div className="bg-slate-50 p-2 text-[9px] text-slate-500 border-t border-slate-300">
+                <strong>ملاحظة فنية:</strong> يجب وضع ملصق المعايرة الأخضر الصغير على جسم الجهاز موضحاً فيه رقم البطاقة وتاريخ المعايرة القادمة. يحظر استخدام الأجهزة التي تجاوزت تاريخ المعايرة المعتمد.
+                <div className="flex justify-between pt-2">
+                  <span>توقيع مسؤول المعايرة بالورشة: __________________</span>
+                  <span>توقيع مهندس الجودة للمكتب الفني: __________________</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 75 - Workshop Zones Detail Layout */}
+      <A4Page pageNum={123}>
+        <div className="space-y-4 mt-4">
+          <SectionHeader icon={Factory} title="منظومة تقسيم مناطق الورشة بالتفصيل" subtitle="التوزيع الجغرافي وتخصيص مساحات الورشة المركزية" />
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-xs space-y-3">
+            <p className="text-slate-700 leading-relaxed">
+              لضمان انسيابية العمل ومنع التداخل بين الأنشطة الصناعية والأنشطة الدقيقة، تم تقسيم الورشة المركزية إلى ٤ مناطق منفصلة هيكلياً وفنياً:
+            </p>
+            <div className="border border-slate-200 rounded-lg overflow-hidden">
+              <table className="w-full text-right text-[10px] border-collapse">
+                <thead>
+                  <tr className="bg-slate-100 border-b border-slate-300 font-bold">
+                    <th className="p-2 border-l border-slate-200 w-1/4">المنطقة الفنية</th>
+                    <th className="p-2 border-l border-slate-200">التجهيزات المتوفرة بها</th>
+                    <th className="p-2 text-center w-1/4">إجراءات السلامة الخاصة بالمنطقة</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-slate-200">
+                    <td className="p-2 border-l border-slate-200 font-bold">1️⃣ منطقة الأعمال الميكانيكية واللحام</td>
+                    <td className="p-2 border-l border-slate-200 text-slate-600">مخرطة معادن، ماكينات لحام، مناشير كهربائية، طاولة التقطيع</td>
+                    <td className="p-2 text-center text-red-600 font-bold">ستائر حماية للحام، طفايات حريق CO2، شفاطات سحب الدخان</td>
+                  </tr>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <td className="p-2 border-l border-slate-200 font-bold">2️⃣ منطقة الأعمال الكهربائية والدقيقة</td>
+                    <td className="p-2 border-l border-slate-200 text-slate-600">أجهزة معايرة، أوسيلوسكوب، مفكات معزولة، كواشف حرارية للوحات</td>
+                    <td className="p-2 text-center text-blue-600 font-bold">أرضيات مطاطية عازلة للكهرباء، حظر استخدام المياه بالمنطقة</td>
+                  </tr>
+                  <tr className="border-b border-slate-200">
+                    <td className="p-2 border-l border-slate-200 font-bold">3️⃣ منطقة الاختبار والمحاكاة الفنية</td>
+                    <td className="p-2 border-l border-slate-200 text-slate-600">لوحات كهربائية لتجريب الأحمال، مضخات اختبار الضغط والتهريب</td>
+                    <td className="p-2 text-center text-amber-600 font-bold">تسييج منطقة الاختبار، كاميرات مراقبة، حواجز حماية</td>
+                  </tr>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <td className="p-2 border-l border-slate-200 font-bold">4️⃣ منطقة التخزين والاستقبال</td>
+                    <td className="p-2 border-l border-slate-200 text-slate-600">أرفف تخزين مرقمة، رافعة يدوية، كراسات استلام وتسليم رقمية</td>
+                    <td className="p-2 text-center text-green-600 font-bold">ترتيب الأصول وفق باركود CMMS، حظر إعاقة الممرات</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <CallOutBox type="tip" title="حوكمة الفصل المكانى">
+              يساهم الفصل المكاني الدقيق في حماية الأجهزة الحساسة للقياس (مثل الأجهزة الكهربائية) من الأتربة وشرارات ماكينات اللحام والقطع، مما يطيل عمرها ويحافظ على دقتها التشغيلية.
+            </CallOutBox>
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 76 - Compressor Overhaul SOP */}
+      <A4Page pageNum={124}>
+        <div className="space-y-4 mt-4">
+          <SectionHeader icon={Hammer} title="دليل الصيانة: عمرة ضواغط الهواء الكبرى" subtitle="إجراء التشغيل المعياري (SOP) لصيانة وإعادة تأهيل ضواغط الهواء بالورشة" />
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-xs space-y-4">
+            <p className="text-slate-700 leading-relaxed">
+              تعتبر ضواغط الهواء بالورشة من المعدات التشغيلية الكبرى التي تتطلب عمرة دورية تفصيلية لضمان استقرار ضغط الهواء وحماية الأدوات المشتركة:
+            </p>
+            <div className="border border-slate-200 rounded-lg p-3 bg-slate-50">
+              <h5 className="font-bold text-slate-800 mb-2">خطوات العمل المعيارية لصيانة الضواغط:</h5>
+              <ol className="space-y-2 text-slate-600 list-decimal list-inside">
+                <li>
+                  <strong>🔒 الفصل والعزل الكامل (LOTO)</strong>: فصل التيار الكهربائي الرئيسي عن الضاغط ووضع قفل وبطاقة تحذيرية لمنع التشغيل الخاطئ.
+                </li>
+                <li>
+                  <strong>💨 تفريغ الضغط</strong>: فتح صمامات الهواء لتصريف أي ضغط متبقي في الخزان بالكامل والتأكد من قراءة العداد للصفر.
+                </li>
+                <li>
+                  <strong>🔧 تفكيك الأجزاء الخارجية</strong>: فك فلاتر الهواء، السيور، وحماية المروحة، وفحص الأجزاء تلو الأخرى للبحث عن علامات التلف.
+                </li>
+                <li>
+                  <strong>🛢️ تغيير الزيت والفلتر</strong>: تفريغ الزيت القديم وتنظيف الخزان السفلي ثم إضافة زيت ضواغط معتمد وتركيب الفلتر الجديد.
+                </li>
+                <li>
+                  <strong>🔍 فحص واختبار الصمامات والأحكام</strong>: فحص صمام الأمان (Safety Valve) للتأكد من عدم وجود انسداد أو تهريب هواء.
+                </li>
+              </ol>
+            </div>
+            <CallOutBox type="critical" title="قاعدة سلامة حرجة">
+              يحظر البدء بأي أعمال تفكيك للضاغط قبل التأكد التام من تفريغ خزان الهواء من الضغط تماماً، حيث يمثل الهواء المضغوط طاقة كامنة قاتلة في حال الفك العشوائي.
+            </CallOutBox>
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 77 - Workshop Machinery Maintenance Schedule */}
+      <A4Page pageNum={125}>
+        <div className="space-y-4 mt-4">
+          <SectionHeader icon={BarChart3} title="جدول الصيانة الوقائية لمعدات الورشة" subtitle="خطة الصيانة الوقائية الذاتية لمعدات الورشة المركزية" />
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-xs space-y-4">
+            <p className="text-slate-700 leading-relaxed">
+              تخضع معدات الورشة ذاتها لجدول صيانة وقائية صارم عبر نظام CMMS للتأكد من جاهزيتها الدائمة لدعم المواقع الخارجية:
+            </p>
+            <div className="border border-slate-200 rounded-lg overflow-hidden">
+              <table className="w-full text-right text-[10px] border-collapse">
+                <thead>
+                  <tr className="bg-slate-100 border-b border-slate-300 font-bold">
+                    <th className="p-2 border-l border-slate-200">المعدة بالورشة</th>
+                    <th className="p-2 border-l border-slate-200">نوع الصيانة المطلوبة</th>
+                    <th className="p-2 border-l border-slate-200 text-center">الدورية</th>
+                    <th className="p-2 text-center">المسؤول عن التنفيذ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-slate-200">
+                    <td className="p-2 border-l border-slate-200 font-bold">🗜️ مخرطة المعادن</td>
+                    <td className="p-2 border-l border-slate-200">تشحيم المجاري الحديدية، تنظيف الرايش، قياس المحاذاة والسرعات</td>
+                    <td className="p-2 border-l border-slate-200 text-center text-blue-600 font-bold">أسبوعي</td>
+                    <td className="p-2 text-center text-slate-700">فني خراطة وميكانيكا</td>
+                  </tr>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <td className="p-2 border-l border-slate-200 font-bold">⚡ ماكينة اللحام CO2</td>
+                    <td className="p-2 border-l border-slate-200">تنظيف فوهات اللحام، التحقق من التمديدات الأرضية العازلة</td>
+                    <td className="p-2 border-l border-slate-200 text-center text-blue-600 font-bold">شهري</td>
+                    <td className="p-2 text-center text-slate-700">فني كهربائي الورشة</td>
+                  </tr>
+                  <tr className="border-b border-slate-200">
+                    <td className="p-2 border-l border-slate-200 font-bold">💨 ضاغط الهواء الكبير</td>
+                    <td className="p-2 border-l border-slate-200">تفريغ الرطوبة والمياه من صمام التصريف السفلي للخزان</td>
+                    <td className="p-2 border-l border-slate-200 text-center text-red-600 font-bold">يومي</td>
+                    <td className="p-2 text-center text-slate-700">فني ميكانيكا الورشة</td>
+                  </tr>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <td className="p-2 border-l border-slate-200 font-bold">🏗️ الونش العلوي الجسري</td>
+                    <td className="p-2 border-l border-slate-200">فحص الواير الحديدي، التأكد من سلامة كبح المكابح والتروس</td>
+                    <td className="p-2 border-l border-slate-200 text-center text-purple-600 font-bold">نصف سنوي</td>
+                    <td className="p-2 text-center text-slate-700">جهة تفتيش فنية خارجية</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <CallOutBox type="safety" title="ربط صيانة الورشة بالـ CMMS">
+              يتم إصدار أوامر العمل لصيانة معدات الورشة تلقائياً في أول كل أسبوع، ويحظر تأخير أو إغلاق هذه الأوامر إلا بعد التحقق الفعلي من مشرف الورشة لضمان الجاهزية والسلامة.
+            </CallOutBox>
           </div>
         </div>
       </A4Page>

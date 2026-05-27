@@ -31,7 +31,7 @@ export default function Section09() {
   return (
     <>
       {/* Page 56 */}
-      <A4Page pageNum={78}>
+      <A4Page pageNum={132}>
         <SectionHeader icon={Users} title="سلامة الموظفين" subtitle="برنامج شامل للوقاية والتدريب والاستجابة" />
 
         <div className="space-y-4">
@@ -49,7 +49,7 @@ export default function Section09() {
       </A4Page>
 
       {/* Page 56.5 (Employee Safety Principles Flowchart) */}
-      <A4Page pageNum={79}>
+      <A4Page pageNum={133}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">مبادئ سلامة الموظفين</h4>
@@ -73,7 +73,7 @@ export default function Section09() {
       </A4Page>
 
       {/* Page 57 */}
-      <A4Page pageNum={80}>
+      <A4Page pageNum={134}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={BookOpen} title="برامج التدريب والتوعية" />
@@ -108,6 +108,110 @@ export default function Section09() {
                   <li>فريق إسعافات أولية مدرب في كل وردية</li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 81 - Form 18: Power Outage Emergency Response SOP & Checklist */}
+      <A4Page pageNum={135}>
+        <div className="space-y-4 mt-4">
+          <SectionHeader icon={AlertTriangle} title="النموذج ١٨: سيناريو انقطاع التيار الكهربائي" subtitle="إجراء التشغيل المعياري (SOP) للتعامل الطارئ والسريع عند انقطاع الكهرباء بالمباني الحيوية" />
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-xs space-y-4">
+            <p className="text-slate-700 leading-relaxed">
+              يهدف هذا السيناريو المعياري إلى تنسيق الجهود الميدانية الفورية لضمان الانتقال السلس للأحمال الكهربائية الحيوية إلى المولد الاحتياطي دون انقطاع:
+            </p>
+            <div className="border border-slate-300 rounded-lg overflow-hidden">
+              <div className="bg-slate-100 p-2 border-b border-slate-300 font-bold text-center">
+                إجراءات التدخل والتشغيل المعياري (Emergency Response Steps)
+              </div>
+              <table className="w-full text-right text-[10px] border-collapse">
+                <thead>
+                  <tr className="bg-slate-50 border-b border-slate-300 font-bold">
+                    <th className="p-2 border-l border-slate-200 w-[20%]">زمن الاستجابة</th>
+                    <th className="p-2 border-l border-slate-200">الإجراء المطلوب تنفيذه</th>
+                    <th className="p-2 border-l border-slate-200 text-center w-[25%]">الجهة المسؤولة</th>
+                    <th className="p-2 text-center w-[15%]">الحالة بالـ CMMS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-slate-200">
+                    <td className="p-2 border-l border-slate-200 text-red-600 font-bold text-center">⏱️ دقيقة ١ - ٣</td>
+                    <td className="p-2 border-l border-slate-200">التحقق من إقلاع المولد الاحتياطي (Generator ATS) وتغذيته للوحات الطوارئ وغرف السيرفرات والتبريد</td>
+                    <td className="p-2 border-l border-slate-200 text-center text-slate-700">فني الكهرباء المناوب للموقع</td>
+                    <td className="p-2 text-center text-green-600 font-bold">🟢 جاري التنفيذ</td>
+                  </tr>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <td className="p-2 border-l border-slate-200 text-red-600 font-bold text-center">⏱️ دقيقة ٤ - ٧</td>
+                    <td className="p-2 border-l border-slate-200">التحقق الميداني من عدم وجود أشخاص عالقين داخل مصاعد المبنى بالكامل وفتحها يدوياً بواسطة مفاتيح الطوارئ عند الحاجة</td>
+                    <td className="p-2 border-l border-slate-200 text-center text-slate-700">فني المصاعد ومسؤول السلامة</td>
+                    <td className="p-2 text-center text-green-600 font-bold">🟢 جاري التنفيذ</td>
+                  </tr>
+                  <tr className="border-b border-slate-200">
+                    <td className="p-2 border-l border-slate-200 text-red-600 font-bold text-center">⏱️ دقيقة ٨ - ١٥</td>
+                    <td className="p-2 border-l border-slate-200">مراقبة مستمرة لحرارة مستودعات الأدوية وغرف التبريد والتحقق من كفاءة عمل تكييف الطوارئ المتصل بالمولد</td>
+                    <td className="p-2 border-l border-slate-200 text-center text-slate-700">فني التكييف والتبريد الميداني</td>
+                    <td className="p-2 text-center text-green-600 font-bold">🟢 جاري التنفيذ</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <CallOutBox type="critical" title="قاعدة سلامة المولدات">
+              يجب فحص مستوى وقود الديزل في خزان المولد يومياً وتحديث قراءته على تطبيق CMMS، ويحظر بقاء مستوى الديزل تحت ٥٠٪ من سعة الخزان في أي وقت لتجنب التوقف المفاجئ.
+            </CallOutBox>
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 82 - Emergency Mock Drill Calendar & First Aid Protocols */}
+      <A4Page pageNum={136}>
+        <div className="space-y-4 mt-4">
+          <SectionHeader icon={Ambulance} title="جدول الفرضيات السنوي وبروتوكولات الإسعافات" subtitle="جدولة تدريبات الإخلاء الوهمية وتجهيز حقائب الإسعافات الأولية بالفروع" />
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-xs space-y-4">
+            <p className="text-slate-700 leading-relaxed">
+              لضمان جاهزية الموظفين للتصرف السليم أثناء الكوارث والحالات الحرجة، تم إقرار خطة سنوية للتدريبات العملية وبروتوكولات الإسعافات:
+            </p>
+            <div className="border border-slate-200 rounded-lg overflow-hidden">
+              <div className="bg-slate-100 p-1.5 border-b border-slate-200 font-bold text-center">
+                جدول تدريبات الإخلاء والفرضيات الوهمية السنوي (Mock Drill Calendar)
+              </div>
+              <table className="w-full text-right text-[9px] border-collapse">
+                <thead>
+                  <tr className="bg-slate-50 border-b border-slate-200 font-bold">
+                    <th className="p-2 border-l border-slate-150">نوع الفرضية الوهمية</th>
+                    <th className="p-2 border-l border-slate-150">الهدف والمهارة المستهدفة</th>
+                    <th className="p-2 border-l border-slate-150 text-center">الدورية</th>
+                    <th className="p-2 text-center">الربع السنوي المخطط</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-slate-150">
+                    <td className="p-2 border-l border-slate-150 font-bold">🔥 إخلاء مبنى عند نشوب حريق</td>
+                    <td className="p-2 border-l border-slate-150 text-slate-600">التدريب على استخدام مخارج الطوارئ ونقاط التجمع الآمنة واستخدام الطفايات</td>
+                    <td className="p-2 border-l border-slate-150 text-center text-blue-600 font-bold">نصف سنوي</td>
+                    <td className="p-2 text-center text-slate-700">الربع الأول + الربع الثالث</td>
+                  </tr>
+                  <tr className="border-b border-slate-150 bg-slate-50">
+                    <td className="p-2 border-l border-slate-150 font-bold">🔌 انقطاع التيار الكهربائي بالكامل</td>
+                    <td className="p-2 border-l border-slate-150 text-slate-600">اختبار استجابة الفنيين لتشغيل الطوارئ اليدوي وعزل الأحمال ومراقبة ATS</td>
+                    <td className="p-2 border-l border-slate-150 text-center text-blue-600 font-bold">سنوي</td>
+                    <td className="p-2 text-center text-slate-700">الربع الثاني (فترة الصيف والذروة)</td>
+                  </tr>
+                  <tr className="border-b border-slate-150">
+                    <td className="p-2 border-l border-slate-150 font-bold">🚨 سيناريو إسعاف وإصابة ميدانية</td>
+                    <td className="p-2 border-l border-slate-150 text-slate-600">التعامل الفوري مع صدمة كهربائية أو سقوط فني وعمل الإنعاش القلبي الرئوي (CPR)</td>
+                    <td className="p-2 border-l border-slate-150 text-center text-blue-600 font-bold">سنوي</td>
+                    <td className="p-2 text-center text-slate-700">الربع الرابع</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 space-y-1 text-[9px] text-slate-600">
+              <span className="font-bold text-slate-700 block mb-1">🏥 بروتوكول حيازة وتفتيش حقائب الإسعافات:</span>
+              • يلتزم كل مشرف موقع بالتحقق الأسبوعي من اكتمال حقائب الإسعافات الأولية (ضمادات، معقمات، شاش، كرات قطنية).
+              <br />
+              • يثبت الباركود التعريفي على الحقيبة لمسحه وتوثيق الفحص الأسبوعي في نظام CMMS وإلا اعتبر حيوداً في شروط السلامة.
             </div>
           </div>
         </div>

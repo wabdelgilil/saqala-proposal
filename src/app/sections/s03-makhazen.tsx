@@ -122,7 +122,7 @@ export default function Section03() {
   return (
     <>
       {/* Page 22 */}
-      <A4Page pageNum={30}>
+      <A4Page pageNum={51}>
         <SectionHeader icon={Package} title="نظام إدارة مخازن قطع الغيار" subtitle="إدارة موحدة وفعالة للمخزون في جميع المواقع" />
 
         <div className="space-y-4">
@@ -143,7 +143,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 23 */}
-      <A4Page pageNum={31}>
+      <A4Page pageNum={52}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Target} title="أهداف النظام المركزي للمخازن" />
@@ -161,7 +161,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 24 */}
-      <A4Page pageNum={32}>
+      <A4Page pageNum={53}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Warehouse} title="الهيكل المقترح للمخازن" />
@@ -187,7 +187,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 25 */}
-      <A4Page pageNum={33}>
+      <A4Page pageNum={54}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={Database} title="تصنيف قطع الغيار" />
@@ -203,7 +203,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 26 */}
-      <A4Page pageNum={34}>
+      <A4Page pageNum={55}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={ClipboardCheck} title="إدارة المخزون" />
@@ -231,7 +231,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 27 */}
-      <A4Page pageNum={35}>
+      <A4Page pageNum={56}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <h4 className="text-xs font-bold text-slate-700 mb-2">متابعة الحركة والجرد</h4>
@@ -266,7 +266,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 27.5 (Work Cycle Steps) */}
-      <A4Page pageNum={36}>
+      <A4Page pageNum={57}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={TrendingUp} title="دورة عمل الصرف وربطه بأمر العمل" />
@@ -276,7 +276,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 28 */}
-      <A4Page pageNum={37}>
+      <A4Page pageNum={58}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={BarChart3} title="العلاقة بين المخازن والمشتريات" />
@@ -300,7 +300,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 28.5 */}
-      <A4Page pageNum={38}>
+      <A4Page pageNum={59}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <div className="grid grid-cols-2 gap-4">
@@ -323,7 +323,7 @@ export default function Section03() {
       </A4Page>
 
       {/* Page 29 */}
-      <A4Page pageNum={39}>
+      <A4Page pageNum={60}>
         <div className="space-y-4 mt-4">
           <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
             <SectionHeader icon={BarChart3} title="النتائج المتوقعة" />
@@ -338,6 +338,362 @@ export default function Section03() {
             <CallOutBox type="critical" title="التوصية الإجرائية">
               البدء بحصر قطع الغيار الحرجة (تصنيف A) في موقع واحد، وتسجيلها في نظام CMMS مع تحديد الحد الأدنى للمخزون، كبداية تجريبية قبل تعميم النظام على جميع المواقع.
             </CallOutBox>
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 30 (Page 40) - النموذج 7: محضر فحص واستلام قطع الغيار */}
+      <A4Page pageNum={61}>
+        <div className="space-y-4 mt-4">
+          <SectionHeader icon={ClipboardCheck} title="النموذج 7: محضر فحص واستلام قطع الغيار" subtitle="إجراء استلام المواد الموردة للمخازن ومطابقتها للمواصفات الفنية وتوليد الباركود" />
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-xs">
+            <div className="border border-slate-300 rounded-lg overflow-hidden">
+              <div className="bg-slate-100 p-2 border-b border-slate-300 grid grid-cols-2 gap-2 font-bold text-center">
+                <div>رقم المحضر: GRN-2026-1049</div>
+                <div>رقم أمر الشراء: PO-2026-8902</div>
+              </div>
+              <div className="p-3 space-y-3">
+                <div className="grid grid-cols-2 gap-4">
+                  <div><strong>اسم المورد:</strong> مؤسسة الرشيد للمعدات الصناعية</div>
+                  <div><strong>تاريخ الاستلام والتدقيق:</strong> 25-05-2026</div>
+                </div>
+                <table className="w-full text-right text-[10px] border-collapse border border-slate-200">
+                  <thead>
+                    <tr className="bg-slate-50 border-b border-slate-200 font-bold text-slate-800">
+                      <th className="p-1.5 border-l border-slate-200">الوصف الفني للمادة الموردة</th>
+                      <th className="p-1.5 border-l border-slate-200 text-center">الكمية المطلوبة</th>
+                      <th className="p-1.5 border-l border-slate-200 text-center">الكمية المستلمة</th>
+                      <th className="p-1.5 border-l border-slate-200 text-center">نتيجة الفحص الفني</th>
+                      <th className="p-1.5 text-center">الترميز (الباركود المولد)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-slate-200">
+                      <td className="p-1.5 border-l border-slate-200 font-medium">مضخات مياه طاردة مركزية 2 حصان (Pedrollo)</td>
+                      <td className="p-1.5 border-l border-slate-200 text-center font-mono">5 وحدات</td>
+                      <td className="p-1.5 border-l border-slate-200 text-center font-mono">5 وحدات</td>
+                      <td className="p-1.5 border-l border-slate-200 text-center text-green-600 font-bold">🟢 مطابق ومقبول</td>
+                      <td className="p-1.5 text-center font-mono text-slate-600">PMP-PED-2HP-01</td>
+                    </tr>
+                    <tr className="border-b border-slate-200">
+                      <td className="p-1.5 border-l border-slate-200 font-medium">قواطع تيار كهربائي ثلاثية الطور 100 أمبير (Schneider)</td>
+                      <td className="p-1.5 border-l border-slate-200 text-center font-mono">10 وحدات</td>
+                      <td className="p-1.5 border-l border-slate-200 text-center font-mono">10 وحدات</td>
+                      <td className="p-1.5 border-l border-slate-200 text-center text-green-600 font-bold">🟢 مطابق ومقبول</td>
+                      <td className="p-1.5 text-center font-mono text-slate-600">ELC-SCH-100A-02</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div className="bg-slate-50 p-2 text-[9px] text-slate-500 border-t border-slate-300">
+                  <strong>قرار الفحص النهائي:</strong> المواد مطابقة للأكواد المطلوبة وتعمل بكفاءة، تم لصق الباركود وإدخالها على الرفوف المحددة في CMMS.
+                  <div className="flex justify-between pt-2">
+                    <span>توقيع أمين المخزن: __________________</span>
+                    <span>توقيع مهندس الفحص الفني: __________________</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 31 (Page 41) - النموذج 8: بطاقة جرد المخزن الفرعي الدوري */}
+      <A4Page pageNum={62}>
+        <div className="space-y-4 mt-4">
+          <SectionHeader icon={Warehouse} title="النموذج 8: بطاقة جرد المخازن الدورية" subtitle="استمارة مطابقة الرصيد الدفتري المسجل في CMMS مع الجرد الفعلي للمواد والقطع" />
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-xs">
+            <div className="border border-slate-300 rounded-lg overflow-hidden">
+              <div className="bg-slate-100 p-2 border-b border-slate-300 grid grid-cols-3 gap-2 font-bold text-center">
+                <div>المخزن المقيّم: مخزن مستودع أدوية جدة</div>
+                <div>المسؤول: أ. خالد العمري</div>
+                <div>نوع الجرد: جرد دوري ربع سنوي</div>
+              </div>
+              <table className="w-full text-right text-[10px] border-collapse">
+                <thead>
+                  <tr className="bg-slate-50 border-b border-slate-300 font-bold">
+                    <th className="p-2 border-l border-slate-200">كود القطعة</th>
+                    <th className="p-2 border-l border-slate-200">الوصف الفني للقطعة</th>
+                    <th className="p-2 border-l border-slate-200 text-center">الرصيد في CMMS</th>
+                    <th className="p-2 border-l border-slate-200 text-center">الرصيد الفعلي</th>
+                    <th className="p-2 border-l border-slate-200 text-center">الفارق</th>
+                    <th className="p-2 text-center">الإجراء التصحيحي المعتمد</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-slate-200">
+                    <td className="p-2 border-l border-slate-200 font-mono">FLT-AC-24X24</td>
+                    <td className="p-2 border-l border-slate-200">فلتر هواء مكيف 24*24 بوصة</td>
+                    <td className="p-2 border-l border-slate-200 text-center font-mono">150</td>
+                    <td className="p-2 border-l border-slate-200 text-center font-mono">150</td>
+                    <td className="p-2 border-l border-slate-200 text-center font-mono text-green-600 font-bold">0</td>
+                    <td className="p-2 text-slate-500 text-[9px]">لا يوجد انحراف، تطابق كامل.</td>
+                  </tr>
+                  <tr className="border-b border-slate-200">
+                    <td className="p-2 border-l border-slate-200 font-mono">CON-SCH-40A</td>
+                    <td className="p-2 border-l border-slate-200">كونتاكتور مكيف 40 أمبير</td>
+                    <td className="p-2 border-l border-slate-200 text-center font-mono">24</td>
+                    <td className="p-2 border-l border-slate-200 text-center font-mono">23</td>
+                    <td className="p-2 border-l border-slate-200 text-center font-mono text-red-600 font-bold">-1</td>
+                    <td className="p-2 text-red-800 text-[9px] font-bold">عجز قطعة. تم تعديل الرصيد وجار التحقيق.</td>
+                  </tr>
+                  <tr className="border-b border-slate-200">
+                    <td className="p-2 border-l border-slate-200 font-mono">GAS-R410A</td>
+                    <td className="p-2 border-l border-slate-200">أسطوانة غاز تبريد R410A (كيلو)</td>
+                    <td className="p-2 border-l border-slate-200 text-center font-mono">12</td>
+                    <td className="p-2 border-l border-slate-200 text-center font-mono">12</td>
+                    <td className="p-2 border-l border-slate-200 text-center font-mono text-green-600 font-bold">0</td>
+                    <td className="p-2 text-slate-500 text-[9px]">لا يوجد انحراف، تطابق كامل.</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div className="bg-slate-50 p-2 text-[9px] text-slate-500 border-t border-slate-300">
+                <strong>ملاحظة لجنة الجرد:</strong> نسبة دقة التطابق الإجمالية في هذا الفرع بلغت 98.2% وهي نسبة ممتازة ومطابقة للمستهدف السنوي لقسم المخازن.
+                <div className="flex justify-between pt-2">
+                  <span>توقيع مسؤول الجرد: __________________</span>
+                  <span>اعتماد مدير المخازن: __________________</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 32 (Page 42) - معادلة المخزون الآمن (Safety Stock) ومثال عملي */}
+      <A4Page pageNum={63}>
+        <div className="space-y-4 mt-4">
+          <SectionHeader icon={BarChart3} title="معادلة وحسابات مخزون الأمان" subtitle="مثال عملي تطبيقي بالأرقام والمعادلات لتفادي نقص المواد التشغيلية الحرجة" />
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-xs space-y-4">
+            <p className="text-slate-700 leading-relaxed">
+              لحساب مخزون الأمان (Safety Stock) ونقطة إعادة الطلب (Reorder Point) للقطع الاستهلاكية بشكل علمي ودقيق يمنع التوقف، يتم تطبيق المعادلات التالية في نظام CMMS:
+            </p>
+            <div className="border border-slate-200 rounded-lg p-3 bg-slate-50 space-y-3 font-mono text-[10px]" dir="ltr">
+              <div>
+                <strong>1. Safety Stock (SS) Formula:</strong>
+                <div className="text-blue-700 font-bold mt-1">SS = (Max Daily Usage × Max Lead Time) - (Average Daily Usage × Average Lead Time)</div>
+              </div>
+              <hr className="border-slate-200" />
+              <div>
+                <strong>2. Example: AC Air Filters (FLT-AC-24X24) for Jeddah Head Office:</strong>
+                <ul className="list-disc list-inside mt-1 space-y-0.5 text-slate-700">
+                  <li>Average Daily Usage = 5 filters/day</li>
+                  <li>Max Daily Usage (during peak summer) = 12 filters/day</li>
+                  <li>Average Lead Time (Supplier delivery) = 4 days</li>
+                  <li>Max Lead Time = 8 days</li>
+                </ul>
+                <div className="text-blue-700 font-bold mt-1">SS Calculation:</div>
+                <div className="text-slate-900 font-semibold">SS = (12 * 8) - (5 * 4) = 96 - 20 = 76 filters</div>
+                <div className="text-green-700 font-bold mt-1">Safety Stock target in CMMS: 76 units</div>
+              </div>
+              <hr className="border-slate-200" />
+              <div>
+                <strong>3. Reorder Point (ROP) Formula:</strong>
+                <div className="text-blue-700 font-bold mt-1">ROP = (Average Daily Usage × Average Lead Time) + SS</div>
+                <div className="text-slate-900 font-semibold mt-1">ROP = (5 * 4) + 76 = 20 + 76 = 96 filters</div>
+                <div className="text-green-700 font-bold mt-1">CMMS Auto-Trigger: System automatically creates PO when stock drops to 96 units.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 33 (Page 43) - دليل تخزين المواد الفنية الحساسة (SOP) */}
+      <A4Page pageNum={64}>
+        <div className="space-y-4 mt-4">
+          <SectionHeader icon={Warehouse} title="دليل تخزين المواد الفنية الحساسة" subtitle="إجراءات العمل المعيارية (SOP) لتخزين وحفظ المكونات والأكواد ومنع التلف في مستودعات المجموعة" />
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-xs space-y-3">
+            <p className="text-slate-700 leading-relaxed font-semibold">
+              يجب حفظ المواد وقطع الغيار الحساسة للظروف البيئية في ظروف متحكم بها بدقة لتجنب التآكل وفقدان الخصائص الفنية:
+            </p>
+            <div className="grid grid-cols-2 gap-4 text-[10px]">
+              <div className="border border-slate-200 p-3 rounded-lg bg-slate-50">
+                <h5 className="font-bold text-navy-600 mb-1">📟 كروت التحكم الإلكترونية والـ PLC:</h5>
+                <ul className="list-disc list-inside space-y-1 text-slate-600">
+                  <li>تخزين في عبوات مضادة للشحنات الساكنة (Anti-static Bags).</li>
+                  <li>رطوبة نسبية لا تتجاوز 40-50% لمنع التآكل.</li>
+                  <li>درجة حرارة ثابتة (20 - 24 درجة مئوية).</li>
+                </ul>
+              </div>
+              <div className="border border-slate-200 p-3 rounded-lg bg-slate-50">
+                <h5 className="font-bold text-navy-600 mb-1">🛢️ زيوت التزييت والمواد التشغيلية:</h5>
+                <ul className="list-disc list-inside space-y-1 text-slate-600">
+                  <li>حفظ العبوات في وضع رأسي محكم لمنع دخول الرطوبة والهواء.</li>
+                  <li>الابتعاد التام عن أشعة الشمس المباشرة أو مصادر الحرارة والشرر.</li>
+                  <li>الالتزام بسياسة الصرف الأقدم فالأحدث (FIFO).</li>
+                </ul>
+              </div>
+            </div>
+            <CallOutBox type="critical" title="فحص صلاحية البطاريات">
+              يُمنع تخزين بطاريات أنظمة الإنذار والمولدات الاحتياطية بدون شحن دوري لأكثر من 6 أشهر؛ ويجب فحص الفولتية والتاريخ المكتوب عند الاستلام وقبل تسليمها للفنيين.
+            </CallOutBox>
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 34 (Page 44) - خارطة المخازن الفرعية وهيكل الصلاحيات */}
+      <A4Page pageNum={65}>
+        <div className="space-y-4 mt-4">
+          <SectionHeader icon={Warehouse} title="خارطة المخازن الفرعية وهيكل الصلاحيات" subtitle="توزيع المخازن في فروع ومستودعات مجموعة سقالة والمسؤولين عنها وصلاحيات الصرف المعتمدة" />
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-xs">
+            <p className="text-slate-700 leading-relaxed mb-3">
+              يتم توزيع المخازن الفرعية جغرافياً لتخدم المواقع الكبرى للمجموعة، مع ربطها بشبكة موحدة تحت إدارة أمناء مخازن مؤهلين يمتلكون صلاحيات صرف مشروطة:
+            </p>
+            <table className="w-full text-right text-[10px] border-collapse border border-slate-200">
+              <thead>
+                <tr className="bg-slate-50 border-b border-slate-200 font-bold text-slate-800">
+                  <th className="p-2 border-l border-slate-200">المستودع الفرعي</th>
+                  <th className="p-2 border-l border-slate-200 text-center">أمين المخزن المسؤول</th>
+                  <th className="p-2 border-l border-slate-200">نطاق الخدمة التشغيلية</th>
+                  <th className="p-2 text-center">حد صلاحية الصرف المباشر</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-slate-200">
+                  <td className="p-2 border-l border-slate-200 font-medium">مخزن فرع جدة الإداري</td>
+                  <td className="p-2 border-l border-slate-200 text-center">أ. خالد العمري</td>
+                  <td className="p-2 border-l border-slate-200">يخدم مجمع مكاتب الحمراء، مركز البيانات، الفرع الإقليمي.</td>
+                  <td className="p-2 text-center font-mono font-bold text-green-700">حتى 3,000 ريال</td>
+                </tr>
+                <tr className="border-b border-slate-200">
+                  <td className="p-2 border-l border-slate-200 font-medium">مخزن مستودع الأدوية - جدة</td>
+                  <td className="p-2 border-l border-slate-200 text-center">أ. محمد الحربي</td>
+                  <td className="p-2 border-l border-slate-200">يخدم مستودع الأدوية المبرد وغرف التجميد الكبرى حصرياً.</td>
+                  <td className="p-2 text-center font-mono font-bold text-green-700">حتى 5,000 ريال (طارئ)</td>
+                </tr>
+                <tr className="border-b border-slate-200">
+                  <td className="p-2 border-l border-slate-200 font-medium">مخزن مستودع السلي - الرياض</td>
+                  <td className="p-2 border-l border-slate-200 text-center">أ. فهد القحطاني</td>
+                  <td className="p-2 border-l border-slate-200">يخدم مستودع الرياض وفروع المنطقة الوسطى.</td>
+                  <td className="p-2 text-center font-mono font-bold text-green-700">حتى 3,000 ريال</td>
+                </tr>
+              </tbody>
+            </table>
+            <CallOutBox type="tip" title="صلاحيات الصرف الطارئ">
+              في الحالات الطارئة جداً (أعطال مستودعات التبريد)، يمتلك أمين المخزن صلاحية تجاوز حد الصرف المالي بشرط ربط الصرف برقم بلاغ طارئ معتمد مسبقاً من المكتب الفني.
+            </CallOutBox>
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 35 (Page 45) - دراسة حالة عملية: تأمين قطع غيار حرجة */}
+      <A4Page pageNum={66}>
+        <div className="space-y-4 mt-4">
+          <SectionHeader icon={AlertTriangle} title="دراسة حالة: تأمين قطع غيار حرجة في وقت قياسي" subtitle="قصة نجاح في السيطرة على عطل التبريد بمستودع الرياض عبر الربط اللوجستي السريع" />
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-xs space-y-3">
+            <h4 className="font-bold text-navy-600">تفاصيل التدخل اللوجستي السريع للمخازن:</h4>
+            <div className="border border-slate-200 rounded-lg p-3 bg-slate-50 space-y-2 text-[10px] text-slate-700">
+              <p>
+                <strong>الوضع (02:00 م)</strong>: تعرض ضاغط تبريد رئيسي (Chiller Compressor) للتعطل المفاجئ في مستودع أدوية الرياض أثناء ذروة حرارة الصيف (46م).
+              </p>
+              <p>
+                <strong>المشكلة</strong>: تبين أن مخزن الرياض الفرعي لا يحتوي على الضاغط المطلوب كقطعة احتياطية بسبب نفاد الكمية في الأسبوع الماضي، وزمن التوريد من الوكيل المعتمد يستغرق 5 أيام عمل.
+              </p>
+              <p>
+                <strong>الحل اللوجستي (02:15 م)</strong>: استعلم المكتب الفني عبر نظام CMMS الموحد عن رصيد القطعة في المخازن الأخرى، وتبين وجود وحدة واحدة في مخزن جدة المركزي. تم تعميد نقل القطعة فوراً عبر النقل السريع الجوي الخاص بالمجموعة.
+              </p>
+              <p>
+                <strong>النتيجة (09:00 ص اليوم التالي)</strong>: وصول الضاغط لمطار الرياض واستلامه الفوري، والانتهاء من التركيب والتشغيل واختبار ضغط الفريون بنجاح خلال 18 ساعة فقط من لحظة وقوع العطل الأصلي.
+              </p>
+            </div>
+            <CallOutBox type="goal" title="القيمة التشغيلية المحققة">
+              أنقذت هذه العملية شحنة أدوية حيوية تفوق قيمتها التشغيلية والمالية مليون ريال سعودي بفضل مرونة وسرعة الاستعلام والربط بين المخازن الفروع في نظام CMMS الموحد.
+            </CallOutBox>
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 36 (Page 46) - مؤشرات أداء إدارة المخازن والمشتريات */}
+      <A4Page pageNum={67}>
+        <div className="space-y-4 mt-4">
+          <SectionHeader icon={BarChart3} title="مؤشرات أداء إدارة المخازن والمشتريات" subtitle="معايير قياس كفاءة دورة التوريد والصرف ودقة جرد قطع الغيار في المجموعة" />
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-xs">
+            <p className="text-slate-700 leading-relaxed mb-3">
+              يقوم المكتب الفني المركزي بمراجعة مؤشرات الأداء (KPIs) التالية شهرياً لضمان كفاءة أداء المخازن وتوافر المواد التشغيلية بأقل تكلفة ممكنة:
+            </p>
+            <table className="w-full text-right text-[10px] border-collapse border border-slate-200">
+              <thead>
+                <tr className="bg-slate-50 border-b border-slate-200 font-bold text-slate-800">
+                  <th className="p-2 border-l border-slate-200">مؤشر الأداء الرئيسي (KPI)</th>
+                  <th className="p-2 border-l border-slate-200 text-center">طريقة وعينة الحساب</th>
+                  <th className="p-2 border-l border-slate-200 text-center">النسبة المستهدفة سنوياً</th>
+                  <th className="p-2 text-center">الأثر المباشر على عمليات الصيانة</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-slate-200">
+                  <td className="p-2 border-l border-slate-200 font-medium">نسبة دقة المخزون (Inventory Accuracy)</td>
+                  <td className="p-2 border-l border-slate-200 text-center">(المطابق فعلياً / المسجل دفترياً) * 100</td>
+                  <td className="p-2 border-l border-slate-200 text-center font-mono font-bold text-green-700">&gt; 98%</td>
+                  <td className="p-2 text-slate-600">منع حدوث عجز مفاجئ لقطع الغيار أثناء الأعطال الحرجة.</td>
+                </tr>
+                <tr className="border-b border-slate-200">
+                  <td className="p-2 border-l border-slate-200 font-medium">معدل تلبية الطلبات (Fill Rate)</td>
+                  <td className="p-2 border-l border-slate-200 text-center">(القطع المتوفرة فوراً / الطلبات الكلية) * 100</td>
+                  <td className="p-2 border-l border-slate-200 text-center font-mono font-bold text-green-700">&gt; 90%</td>
+                  <td className="p-2 text-slate-600">تسريع وتيرة الإصلاح وعدم تأخير الفنيين بانتظار الشراء.</td>
+                </tr>
+                <tr className="border-b border-slate-200">
+                  <td className="p-2 border-l border-slate-200 font-medium">معدل دوران المخزون (Turnover Rate)</td>
+                  <td className="p-2 border-l border-slate-200 text-center">تكلفة المواد المنصرفة / متوسط قيمة المخزون</td>
+                  <td className="p-2 border-l border-slate-200 text-center font-mono font-bold text-blue-700">4 إلى 6 مرات / سنة</td>
+                  <td className="p-2 text-slate-600">تقليل رأس المال الراكد ومنع تقادم وتلف القطع بالمخزن.</td>
+                </tr>
+              </tbody>
+            </table>
+            <CallOutBox type="tip" title="تقارير الأداء">
+              يتم إصدار تقرير شهري يوضح نسب الانحراف والعجز في كل مخزن فرعي وتوجيهه لمدير الصيانة لإجراء التدقيق اللازم.
+            </CallOutBox>
+          </div>
+        </div>
+      </A4Page>
+
+      {/* Page 37 (Page 47) - استمارة التخلص من المواد التالفة والراكدة */}
+      <A4Page pageNum={68}>
+        <div className="space-y-4 mt-4">
+          <SectionHeader icon={ClipboardCheck} title="استمارة التخلص من المواد التالفة والراكدة" subtitle="نموذج تصنيف المواد والمعدات المستهلكة (Scrap) وإجازة التخلص منها أو بيعها" />
+          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-xs">
+            <div className="border border-slate-300 rounded-lg overflow-hidden">
+              <div className="bg-slate-100 p-2 border-b border-slate-300 grid grid-cols-2 gap-2 font-bold text-center">
+                <div>رقم طلب التخريد: SCRP-2026-042</div>
+                <div>التاريخ: 25-05-2026</div>
+              </div>
+              <div className="p-3 space-y-3">
+                <div className="grid grid-cols-2 gap-4">
+                  <div><strong>موقع المواد:</strong> الورشة المركزية - مستودع الخردة</div>
+                  <div><strong>اللجنة الفنية المشرفة:</strong> م. أحمد المطيري + أمين المخزن الرئيسي</div>
+                </div>
+                <table className="w-full text-right text-[10px] border-collapse border border-slate-200">
+                  <thead>
+                    <tr className="bg-slate-50 border-b border-slate-200 font-bold text-slate-800">
+                      <th className="p-1.5 border-l border-slate-200">المادة / الأصل المراد تخريده</th>
+                      <th className="p-1.5 border-l border-slate-200 text-center">الكمية</th>
+                      <th className="p-1.5 border-l border-slate-200">سبب التخريد والاستبعاد الفني</th>
+                      <th className="p-1.5 text-center">طريقة التخلص الموصى بها</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-slate-200">
+                      <td className="p-1.5 border-l border-slate-200 font-medium">ضواغط تكييف قديمة محترقة الملفات</td>
+                      <td className="p-1.5 border-l border-slate-200 text-center font-mono">14 وحدة</td>
+                      <td className="p-1.5 border-l border-slate-200">تالفة بالكامل وتكلفة إعادة لف الملفات تفوق 80% من قيمة الضاغط الجديد.</td>
+                      <td className="p-1.5 text-center font-bold text-amber-700">بيع كخردة (Scrap) بالمزاد</td>
+                    </tr>
+                    <tr className="border-b border-slate-200">
+                      <td className="p-1.5 border-l border-slate-200 font-medium">بطاريات حمضية قديمة لأنظمة إنذار الحريق</td>
+                      <td className="p-1.5 border-l border-slate-200 text-center font-mono">32 وحدة</td>
+                      <td className="p-1.5 border-l border-slate-200">انتهاء العمر الافتراضي وتاريخ الصلاحية وتلف كيميائي داخلي.</td>
+                      <td className="p-1.5 text-center font-bold text-red-600">إرجاع للوكيل للتخلص البيئي الآمن</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div className="bg-slate-50 p-2 text-[9px] text-slate-500 border-t border-slate-300">
+                  <strong>اعتماد اللجنة الفنية المشتركة:</strong> المواد المذكورة أعلاه غير صالحة للتشغيل أو الاستخدام وتعتبر خردة، ونوصي بإتمام التخلص منها حسب اللوائح البيئية والمالية المعتمدة بالمجموعة.
+                  <div className="flex justify-between pt-2">
+                    <span>توقيع اللجنة المالية: __________________</span>
+                    <span>اعتماد مدير المشتريات: __________________</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </A4Page>

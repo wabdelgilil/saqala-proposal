@@ -162,12 +162,19 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Build and compile Next.js production site successfully
   - [x] Delete obsolete duplicate directories `saqala-summary` and `saqala-presentation`
   - [x] Save changes to GitHub
-- [ ] **Task 29: Implement PowerPoint-Style Widescreen Slide Deck (`/pre`)**
-  - [ ] Create `SlideDeck.tsx` component with active slide state and keyboard event listeners
-  - [ ] Convert all 15 presentation slides in `src/app/pre/page.tsx` to 16:9 landscape aspect ratio
-  - [ ] Configure print-media queries to print slides in landscape A4 layout
-  - [ ] Run `npm run build` to confirm compilation success
-  - [ ] Save changes to GitHub
+- [x] **Task 29: Implement PowerPoint-Style Widescreen Slide Deck (`/pre`)**
+  - [x] Create `SlideDeck.tsx` component with active slide state and keyboard event listeners
+  - [x] Convert all presentation slides in `src/app/pre/page.tsx` to 16:9 landscape aspect ratio (expanded to 18 slides covering all 10 sections)
+  - [x] Configure print-media queries to print slides in landscape A4 layout
+  - [x] Run `npm run build` to confirm compilation success
+  - [x] Save changes to GitHub
+- [x] **Task 30: 140-Page Expansion with Real-World Checklists and Forms**
+  - [x] Expand Section 7 (Central Workshop) to 8 pages (calibration forms, workshop zones layout, compressor overhaul SOP, machinery maintenance schedule)
+  - [x] Expand Section 8 (Safety Governance) to 6 pages (CD building compliance checklist, HSE penalty grid)
+  - [x] Expand Section 9 (Employee Safety) to 5 pages (power outage emergency response SOP, drill calendars)
+  - [x] Expand Section 10 (Technician Safety) to 4 pages (Safe PTW, Hot Work PTW forms)
+  - [x] Run synchronization script to automatically map page numbers cleanly from 1 to 140
+  - [x] Verify production build compiles without errors
 
 ## Section 2: Future Updates
 
