@@ -175,12 +175,35 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Expand Section 10 (Technician Safety) to 4 pages (Safe PTW, Hot Work PTW forms)
   - [x] Run synchronization script to automatically map page numbers cleanly from 1 to 140
   - [x] Verify production build compiles without errors
+- [x] **Task 31: Four-Choice Landing Page & CMMS Study Route (`/cmms`)**
+  - [x] Create new route `/cmms` in Next.js app to render the 8-page CMMS Selection study (`gridfix cmms.md`)
+  - [x] Expand landing page options to 4 choices: Full Study (`/all`), Summary (`/sum`), Presentation (`/pre`), and CMMS Selection Study (`/cmms`)
+  - [x] Update card page counts and slide counts on the landing page
+  - [x] Run successful Next.js build compilation with the new `/cmms` route and page grid layout
+- [x] **Task 32: Synchronize Workspace Markdown Files with Expanded App Content**
+  - [x] Update root slide deck Markdown `GridFix_CMMS_عرض_تقديمي_للإدارة.md` to contain all 18 slides matching the widescreen presentation
+  - [x] Synchronize root study Markdown `المشروع_الكامل_منظومة_الصيانة_المركزية.md` and the 10 individual parts (`الجزء_01` to `الجزء_10`) to match the expanded 140-page content of the React web application
+- [x] **Task 33: CMMS Selection Study 16-Page Expansion & Decisional Data Integration**
+  - [x] Expand `/cmms` route in React app to 16 pages, including detailed cover, system profiles, 5-year TCO, partnership models, technical integrations (BMS), data migration phases, security policies, and BCP emergency paper kits.
+  - [x] Update landing page `/` (card and page counts) to reflect 16-page length.
+  - [x] Rewrite `gridfix cmms.md` in workspace root to match the 16-page structure and content.
+  - [x] Verify Next.js build compilation.
+- [x] **Task 34: CMMS Study Integration of GridFix Feature & Value Guide**
+  - [x] Integrate detailed marketing/business value features from `GRIDFIX_MARKETING_FEATURES_GUIDE.md` into `/cmms` route in React app (expanding it to 25 pages total).
+  - [x] Added pages for capabilities overview hierarchy tree, detailed operational, technical, PM, reliability, and security features catalog, maintenance excellence impact matrix, competitive advantage matrices (Excel vs Manual vs GridFix), ROI analysis details, and background architecture features.
+  - [x] Update landing page `/` page counts to reflect 25 pages.
+  - [x] Rewrite `gridfix cmms.md` in workspace root to match the 25-page layout.
+  - [x] Verify Next.js build compilation.
+- [x] **Task 35: CMMS Presentation Widescreen Slide Deck & Landing Card Link**
+  - [x] Create a second widescreen PowerPoint-style slide deck presentation for the CMMS selection study (`/cmms-pre`) with 15 slides.
+  - [x] Resolve missing Lucide icon imports and JSX parsing errors in the presentation code.
+  - [x] Integrate the fifth card on the landing page `/` pointing to the CMMS Presentation.
+  - [x] Reconfigure the responsive grid columns on the landing page to fit five items (`lg:grid-cols-3 xl:grid-cols-5`) in one row on widescreen displays.
+  - [x] Verify Next.js production build runs successfully.
 
 ## Section 2: Future Updates
 
 - [ ] Add support for multiple themes (e.g. grayscale print mode toggle)
-- [ ] Integrate with automated PDF printing scripts (e.g. Playwright or Puppeteer) for direct A4 generation
-
 
 
 

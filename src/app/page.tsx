@@ -10,7 +10,7 @@ export default function LandingPage() {
       title: "الدراسة الكاملة للمشروع",
       subtitle: "المشروع الكامل المدمج",
       path: "/all",
-      pages: "82 صفحة",
+      pages: "140 صفحة",
       badge: "فني وتفصيلي",
       color: "from-blue-600 to-cyan-500",
       shadow: "shadow-blue-500/10 hover:shadow-blue-500/20",
@@ -36,13 +36,39 @@ export default function LandingPage() {
       title: "العرض التقديمي الموجه للإدارة",
       subtitle: "Management Presentation",
       path: "/pre",
-      pages: "15 شريحة",
+      pages: "18 شريحة",
       badge: "تصوري وسيناريوهات",
       color: "from-violet-600 to-fuchsia-500",
       shadow: "shadow-violet-500/10 hover:shadow-violet-500/20",
       border: "hover:border-violet-500/50",
       glow: "bg-violet-500/10 text-violet-400",
-      description: "عرض بصري تفاعلي يركز على المشكلة والحلول المقارنة، تفاصيل دورة يوم العمل للفني عبر تطبيق الجوال، مصفوفة التقييم الكمي، مقارنة GridFix مع Maximo و Fiix، ومسار تحويل النظام لمنتج استثماري تجاري.",
+      description: "عرض بصري تفاعلي (بشكل شرائح عريضة 16:9) يركز على المشكلة والحلول المقارنة، تفاصيل دورة يوم عمل الفني، مصفوفة التقييم، وتكامل الورشة ومسار حوكمة السلامة والاستثمار.",
+      icon: Monitor,
+    },
+    {
+      title: "دراسة اختيار نظام CMMS",
+      subtitle: "الأنظمة الجاهزة مقابل GridFix",
+      path: "/cmms",
+      pages: "25 صفحة",
+      badge: "مقارنة وجدوى فنية",
+      color: "from-amber-500 to-orange-400",
+      shadow: "shadow-amber-500/10 hover:shadow-amber-500/20",
+      border: "hover:border-amber-500/50",
+      glow: "bg-amber-500/10 text-amber-400",
+      description: "دراسة متخصصة للمقارنة والمفاضلة الكمية والنوعية بين شراء أنظمة صيانة جاهزة من السوق (IBM Maximo, Fiix) وبين بناء وتطوير منصة GridFix داخلياً وتملك الكود الاستثماري.",
+      icon: Settings,
+    },
+    {
+      title: "العرض التقديمي لدراسة CMMS",
+      subtitle: "CMMS Selection Presentation",
+      path: "/cmms-pre",
+      pages: "15 شريحة",
+      badge: "تصوري ومقارنة",
+      color: "from-rose-600 to-pink-500",
+      shadow: "shadow-rose-500/10 hover:shadow-rose-500/20",
+      border: "hover:border-rose-500/50",
+      glow: "bg-rose-500/10 text-rose-400",
+      description: "عرض بصري تفاعلي (شرائح 16:9) يقدم نتائج دراسة اختيار نظام الـ CMMS والمفاضلة المالية والنوعية بين البدائل وخطط التكامل والاستثمار المقترحة.",
       icon: Monitor,
     },
   ];
@@ -57,7 +83,7 @@ export default function LandingPage() {
 
       {/* Header */}
       <header className="w-full border-b border-slate-800/80 bg-slate-900/30 backdrop-blur-md relative z-10 py-6">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="p-2.5 bg-slate-800/80 rounded-xl border border-slate-700/50">
               <Settings className="w-6 h-6 text-blue-400 animate-spin-slow" />
@@ -80,7 +106,7 @@ export default function LandingPage() {
 
       {/* Main Content */}
       <main className="flex-grow flex items-center justify-center py-12 md:py-20 relative z-10">
-        <div className="max-w-6xl w-full mx-auto px-4 text-center">
+        <div className="max-w-7xl w-full mx-auto px-4 text-center">
           
           {/* Main Title Banner */}
           <div className="max-w-3xl mx-auto mb-16">
@@ -97,44 +123,44 @@ export default function LandingPage() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-right">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 text-right">
             {cards.map((card) => {
               const IconComponent = card.icon;
               return (
                 <Link 
                   key={card.path} 
                   href={card.path}
-                  className={`group relative flex flex-col justify-between bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 rounded-2xl p-6 transition-all duration-300 transform hover:-translate-y-1.5 shadow-2xl ${card.shadow} ${card.border} overflow-hidden`}
+                  className={`group relative flex flex-col justify-between bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 rounded-2xl p-5 transition-all duration-300 transform hover:-translate-y-1.5 shadow-2xl ${card.shadow} ${card.border} overflow-hidden`}
                 >
                   {/* Subtle hover gradient inside card */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/5 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                   <div>
                     {/* Icon & Metadata Grid */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div className={`p-3 rounded-xl bg-gradient-to-br ${card.color} text-white shadow-lg shadow-black/30 transform group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComponent className="w-6 h-6" />
+                    <div className="flex items-center justify-between mb-5">
+                      <div className={`p-2.5 rounded-xl bg-gradient-to-br ${card.color} text-white shadow-lg shadow-black/30 transform group-hover:scale-110 transition-transform duration-300`}>
+                        <IconComponent className="w-5 h-5" />
                       </div>
-                      <div className="flex gap-2">
-                        <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60">
+                      <div className="flex gap-1.5">
+                        <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60">
                           {card.pages}
                         </span>
-                        <span className={`text-[11px] font-bold px-2 py-0.5 rounded ${card.glow}`}>
+                        <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${card.glow}`}>
                           {card.badge}
                         </span>
                       </div>
                     </div>
 
                     {/* Titles */}
-                    <span className="text-xs text-blue-400 font-semibold tracking-wider block mb-1">
+                    <span className="text-[10px] text-blue-400 font-semibold tracking-wider block mb-1">
                       {card.subtitle}
                     </span>
-                    <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-300 transition-all duration-300 mb-3">
+                    <h3 className="text-lg font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-300 transition-all duration-300 mb-2">
                       {card.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-slate-400 text-sm leading-relaxed mb-6 font-light">
+                    <p className="text-slate-400 text-xs leading-relaxed mb-5 font-light">
                       {card.description}
                     </p>
                   </div>
