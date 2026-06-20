@@ -247,6 +247,12 @@ This document lists all tasks that have been successfully implemented and verifi
   - Added the `.theme-grayscale` filter style to [globals.css](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/globals.css) that converts all page elements (including text, cards, tables, SVGs, and diagrams) to clean, high-contrast grayscale to preview and print without using colored ink.
   - Integrated the `<PrintControlBar />` component into the 5 primary routes of the application: Full Study ([page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/all/page.tsx)), Summary ([page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sum/page.tsx)), CMMS Study ([page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/cmms/page.tsx)), Presentation Slide Deck ([page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/pre/page.tsx)), and CMMS Presentation Slide Deck ([page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/cmms-pre/page.tsx)).
   - Verified static Next.js production build (`npm run build`) runs and compiles successfully with zero errors or warnings.
+- **Optimize Print & Grayscale Line Contrast:**
+  - Replaced hardcoded styling values (such as `#cbd5e1`, `#e2e8f0`, and `#3b82f6` strokes) in flowchart connection lines, sequence diagram lifelines, and arrows with unified CSS variables (`var(--flowchart-*)` and `var(--sequence-*)`).
+  - Optimized the color and layout rendering inside [globals.css](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/globals.css) to make diagram paths, arrows, badges, and labels render with darker colors and thicker strokes in both standard color print mode and grayscale print mode.
+  - Forced all headings, paragraphs, and tables to render in deep, high-contrast text (`#0f172a` or `#000000`) globally in print mode.
+  - Verified static Next.js production build (`npm run build`) compiles successfully.
+
 
 
 

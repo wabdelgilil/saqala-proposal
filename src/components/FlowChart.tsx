@@ -288,8 +288,9 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
               markerHeight={5}
               orient="auto-start-reverse"
             >
-              <path d="M 0 1.5 L 8 5 L 0 8.5 Z" fill="#94a3b8" />
+              <path d="M 0 1.5 L 8 5 L 0 8.5 Z" fill="var(--flowchart-line)" />
             </marker>
+
           </defs>
 
           {/* Connection Lines (glowing SVG paths in the background) */}
@@ -510,8 +511,8 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
                 <path
                   d={pathD}
                   fill="none"
-                  stroke="#cbd5e1"
-                  strokeWidth={1.25}
+                  stroke="var(--flowchart-line)"
+                  strokeWidth="var(--flowchart-line-width)"
                   markerEnd={`url(#arrow-${uid})`}
                 />
                 
@@ -529,19 +530,20 @@ export default function FlowChart({ nodes, edges, dir = "TD", title }: Props) {
                             width={rectW}
                             height={16}
                             rx={4}
-                            fill="#f8fafc"
-                            stroke="#e2e8f0"
+                            fill="var(--flowchart-label-bg)"
+                            stroke="var(--flowchart-label-border)"
                             strokeWidth={1}
                           />
                           <text
                             x={labelX}
                             y={labelY + 3}
                             textAnchor="middle"
-                            fill="#64748b"
+                            fill="var(--flowchart-label-text)"
                             fontSize={8}
                             fontWeight="bold"
                             className="font-sans"
                           >
+
                             {edge.label}
                           </text>
                         </>

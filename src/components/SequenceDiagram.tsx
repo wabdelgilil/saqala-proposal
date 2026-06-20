@@ -105,9 +105,10 @@ export default function SequenceDiagram({ participants, steps, title }: Props) {
               markerHeight={6}
               orient="auto-start-reverse"
             >
-              <path d="M 0 1.5 L 8 5 L 0 8.5 Z" fill="#3b82f6" />
+              <path d="M 0 1.5 L 8 5 L 0 8.5 Z" fill="var(--sequence-arrow)" />
             </marker>
           </defs>
+
 
           {/* Vertical Lifelines */}
           {participants.map((p) => {
@@ -119,7 +120,7 @@ export default function SequenceDiagram({ participants, steps, title }: Props) {
                 y1={cardH + 20}
                 x2={x}
                 y2={totalH - 20}
-                stroke="#cbd5e1"
+                stroke="var(--sequence-lifeline)"
                 strokeWidth={1.5}
                 strokeDasharray="4,4"
               />
@@ -148,18 +149,18 @@ export default function SequenceDiagram({ participants, steps, title }: Props) {
                   y1={y}
                   x2={x2}
                   y2={y}
-                  stroke="#3b82f6"
-                  strokeWidth={1.5}
+                  stroke="var(--sequence-arrow)"
+                  strokeWidth="var(--sequence-arrow-width)"
                   markerEnd={`url(#arrow-seq-${uid})`}
                 />
 
                 {/* Step number badge (circle) */}
-                <circle cx={xMid} cy={y} r={9} fill="#2563eb" />
+                <circle cx={xMid} cy={y} r={9} fill="var(--sequence-badge)" />
                 <text
                   x={xMid}
                   y={y + 3}
                   textAnchor="middle"
-                  fill="white"
+                  fill="var(--sequence-badge-text)"
                   fontSize={8}
                   fontWeight="bold"
                   className="font-sans"
@@ -172,7 +173,7 @@ export default function SequenceDiagram({ participants, steps, title }: Props) {
                   x={xMid}
                   y={y - 7}
                   textAnchor="middle"
-                  fill="#1e3a5f"
+                  fill="var(--sequence-text)"
                   fontSize={9}
                   fontWeight="bold"
                   className="font-sans"
@@ -180,6 +181,7 @@ export default function SequenceDiagram({ participants, steps, title }: Props) {
                 >
                   {step.label}
                 </text>
+
               </g>
             );
           })}

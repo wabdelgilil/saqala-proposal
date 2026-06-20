@@ -205,6 +205,13 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Add `.theme-grayscale` filter style to `globals.css`
   - [x] Integrate print bar into `/all`, `/sum`, `/cmms`, `/pre`, and `/cmms-pre` routes
   - [x] Run production build verification (`npm run build`)
+- [x] **Task 37: Optimize Print & Grayscale Line Contrast**
+  - [x] Introduce CSS variables for connection lines, lifelines, arrows, badges, and labels in `globals.css`
+  - [x] Bind SVG components in `FlowChart.tsx` and `SequenceDiagram.tsx` to print contrast variables
+  - [x] Configure standard color print values to darken and scale line thickness for high-contrast color paper prints
+  - [x] Configure grayscale overrides for solid dark gray/black elements to ensure readability
+  - [x] Run static build validation successfully (`npm run build`)
+
 
 ## Section 2: Future Updates
 
