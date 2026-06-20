@@ -12,7 +12,15 @@ export default function PrintControlBar() {
     if (typeof document !== "undefined") {
       setIsGrayscale(document.body.classList.contains("theme-grayscale"));
     }
+
+    // Automatically restore color mode on component unmount (when navigating away)
+    return () => {
+      if (typeof document !== "undefined") {
+        document.body.classList.remove("theme-grayscale");
+      }
+    };
   }, []);
+
 
   const toggleGrayscale = () => {
     if (typeof document !== "undefined") {
