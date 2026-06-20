@@ -241,6 +241,14 @@ This document lists all tasks that have been successfully implemented and verifi
   - Reconfigured the layout grid on the landing page to support 5 cards side-by-side (`lg:grid-cols-3 xl:grid-cols-5`) for widescreen screens.
   - Verified static Next.js production compilation runs successfully via `npm run build`.
 
+### 2026-06-20
+- **Interactive Print & Grayscale Print Theme Support:**
+  - Designed and created a new floating, glassmorphic React component [PrintControlBar.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/components/PrintControlBar.tsx) inside `src/components/` that remains hidden during print via `print:hidden` but allows users to easily print the document (`window.print()`), toggle grayscale print theme for ink saving, or navigate back to the main portal landing page (`/`).
+  - Added the `.theme-grayscale` filter style to [globals.css](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/globals.css) that converts all page elements (including text, cards, tables, SVGs, and diagrams) to clean, high-contrast grayscale to preview and print without using colored ink.
+  - Integrated the `<PrintControlBar />` component into the 5 primary routes of the application: Full Study ([page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/all/page.tsx)), Summary ([page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/sum/page.tsx)), CMMS Study ([page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/cmms/page.tsx)), Presentation Slide Deck ([page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/pre/page.tsx)), and CMMS Presentation Slide Deck ([page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/cmms-pre/page.tsx)).
+  - Verified static Next.js production build (`npm run build`) runs and compiles successfully with zero errors or warnings.
+
+
 
 
 

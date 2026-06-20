@@ -11,6 +11,7 @@ import Section07 from "@/app/sections/s07-warsha";
 import Section08 from "@/app/sections/s08-hawkama";
 import Section09 from "@/app/sections/s09-salamat-mowazafin";
 import Section10 from "@/app/sections/s10-salamat-faniyeen";
+import PrintControlBar from "@/components/PrintControlBar";
 
 export default function ProposalPage() {
   return (
@@ -27,6 +28,9 @@ export default function ProposalPage() {
       <Section08 />
       <Section09 />
       <Section10 />
+
+      <PrintControlBar />
     </div>
   );
 }
+

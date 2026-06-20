@@ -200,10 +200,16 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Integrate the fifth card on the landing page `/` pointing to the CMMS Presentation.
   - [x] Reconfigure the responsive grid columns on the landing page to fit five items (`lg:grid-cols-3 xl:grid-cols-5`) in one row on widescreen displays.
   - [x] Verify Next.js production build runs successfully.
+- [x] **Task 36: Add Interactive Print & Grayscale Print Theme Support**
+  - [x] Create dynamic floating `PrintControlBar.tsx` component in `src/components/`
+  - [x] Add `.theme-grayscale` filter style to `globals.css`
+  - [x] Integrate print bar into `/all`, `/sum`, `/cmms`, `/pre`, and `/cmms-pre` routes
+  - [x] Run production build verification (`npm run build`)
 
 ## Section 2: Future Updates
 
-- [ ] Add support for multiple themes (e.g. grayscale print mode toggle)
+- [x] Add support for multiple themes (e.g. grayscale print mode toggle)
+
 
 
 

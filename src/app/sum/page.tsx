@@ -8,6 +8,8 @@ import DataTable from "@/components/DataTable";
 import SequenceDiagram from "@/components/SequenceDiagram";
 import A4Page from "@/components/A4Page";
 import CoverPage from "@/components/CoverPage";
+import PrintControlBar from "@/components/PrintControlBar";
+
 
 export default function SummaryPage() {
   // Data Definitions
@@ -561,6 +563,9 @@ export default function SummaryPage() {
           </CallOutBox>
         </div>
       </A4Page>
+
+      <PrintControlBar />
     </div>
   );
 }
+

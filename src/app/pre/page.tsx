@@ -7,8 +7,10 @@ import FlowChart from "@/components/FlowChart";
 import DataTable from "@/components/DataTable";
 import SequenceDiagram from "@/components/SequenceDiagram";
 import SlideDeck, { Slide } from "@/components/SlideDeck";
+import PrintControlBar from "@/components/PrintControlBar";
 
 export default function PresentationPage() {
+
   // Data Definitions
   const techDayCols = [{ key: "step", label: "الخطوة" }, { key: "desc", label: "الوصف" }];
   const techDayRows = [
@@ -642,6 +644,9 @@ export default function PresentationPage() {
           </div>
         </Slide>
       </SlideDeck>
+
+      <PrintControlBar />
     </div>
   );
 }
+

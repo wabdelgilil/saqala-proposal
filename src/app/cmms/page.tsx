@@ -33,6 +33,8 @@ import CallOutBox from "@/components/CallOutBox";
 import DataTable from "@/components/DataTable";
 import A4Page from "@/components/A4Page";
 import CoverPage from "@/components/CoverPage";
+import PrintControlBar from "@/components/PrintControlBar";
+
 
 export default function CmmsStudyPage() {
   // Data for TCO Table (Page 4)
@@ -1298,6 +1300,9 @@ export default function CmmsStudyPage() {
           </div>
         </div>
       </A4Page>
+
+      <PrintControlBar />
     </div>
   );
 }
+

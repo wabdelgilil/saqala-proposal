@@ -35,6 +35,8 @@ import SectionHeader from "@/components/SectionHeader";
 import CallOutBox from "@/components/CallOutBox";
 import DataTable from "@/components/DataTable";
 import SlideDeck, { Slide } from "@/components/SlideDeck";
+import PrintControlBar from "@/components/PrintControlBar";
+
 
 export default function CmmsPresentationPage() {
   // TCO Data for Slide 4
@@ -433,6 +435,9 @@ export default function CmmsPresentationPage() {
           </div>
         </Slide>
       </SlideDeck>
+
+      <PrintControlBar />
     </div>
   );
 }
+

@@ -148,3 +148,9 @@ body {
   }
 }
 
+/* Grayscale print theme style rule */
+body.theme-grayscale {
+  filter: grayscale(100%) !important;
+}
+
+
