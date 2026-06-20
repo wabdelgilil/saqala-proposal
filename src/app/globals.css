@@ -180,9 +180,14 @@ body {
     --sequence-badge-text: #ffffff !important;
   }
   
-  /* Force dark text globally in print mode for legibility */
-  body, p, span, td, th, h1, h2, h3, h4, h5, h6 {
+  /* Force dark text globally in print mode for legibility, excluding table headers */
+  body, p, span, td, h1, h2, h3, h4, h5, h6 {
     color: #0f172a !important;
+  }
+  
+  /* Ensure table headers keep high-contrast white text against the dark navy background */
+  th {
+    color: #ffffff !important;
   }
 }
 
@@ -202,6 +207,18 @@ body.theme-grayscale {
   --sequence-badge: #000000 !important;
   --sequence-badge-text: #ffffff !important;
 }
+
+/* Force light gray background and black text on table headers in grayscale mode (screen & print) */
+body.theme-grayscale thead tr,
+body.theme-grayscale tr.bg-\[\#1e3a5f\],
+body.theme-grayscale .bg-\[\#1e3a5f\] {
+  background-color: #cbd5e1 !important;
+  background: #cbd5e1 !important;
+}
+body.theme-grayscale th {
+  color: #000000 !important;
+}
+
 
 
 
