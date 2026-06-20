@@ -49,12 +49,14 @@ export function Slide({
 }
 
 interface SlideDeckProps {
-  children: React.ReactElement<SlideProps>[];
+  children: React.ReactNode;
 }
 
 export default function SlideDeck({ children }: SlideDeckProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const total = children.length;
+  
+  const slides = React.Children.toArray(children).filter(React.isValidElement) as React.ReactElement<SlideProps>[];
+  const total = slides.length;
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev < total - 1 ? prev + 1 : prev));
@@ -140,7 +142,7 @@ export default function SlideDeck({ children }: SlideDeckProps) {
       <div className="relative w-full max-w-[297mm] flex flex-col items-center select-none print:hidden">
         {/* Active Slide Container */}
         <div className="w-full flex justify-center items-center">
-          {children.map((child, index) =>
+          {slides.map((child, index) =>
             React.cloneElement(child, {
               isActive: index === currentSlide,
               slideNum: index + 1,
@@ -209,7 +211,7 @@ export default function SlideDeck({ children }: SlideDeckProps) {
 
       {/* Print Mode: All slides printed sequentially */}
       <div className="hidden print:block w-full">
-        {children.map((child, index) =>
+        {slides.map((child, index) =>
           React.cloneElement(child, {
             isActive: true,
             slideNum: index + 1,

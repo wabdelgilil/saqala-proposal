@@ -159,7 +159,7 @@ export default function SequenceDiagram({ participants, steps, title }: Props) {
                   x={xMid}
                   y={y + 3}
                   textAnchor="middle"
-                  fill="#white"
+                  fill="white"
                   fontSize={8}
                   fontWeight="bold"
                   className="font-sans"
