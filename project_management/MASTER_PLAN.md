@@ -211,11 +211,12 @@ This master plan tracks the design and layout improvements for the `saqala-propo
   - [x] Configure standard color print values to darken and scale line thickness for high-contrast color paper prints
   - [x] Configure grayscale overrides for solid dark gray/black elements to ensure readability
   - [x] Run static build validation successfully (`npm run build`)
-- [x] **Task 38: Add Tree-Structured Table of Contents (فهرس شجري)**
-  - [x] Create hierarchical React component `TableOfContents.tsx` in `src/components/`
-  - [x] Integrate `TableOfContents` right after the cover page in `/all` page (`src/app/all/page.tsx`)
-  - [x] Configure layout to bypass page numbering sequence, leaving subsequent pages unchanged
-  - [x] Verify static build compiles successfully (`npm run build`)
+- [x] **Task 38: Add 2-Page Detailed Tree-Structured Table of Contents (فهرس شجري تفصيلي)**
+  - [x] Create detailed 3-level hierarchical React component `TableOfContents.tsx` in `src/components/` spanning two pages
+  - [x] Integrate both Table of Contents pages right after the cover page in `/all` page (`src/app/all/page.tsx`)
+  - [x] Configure pages to bypass page numbering sequence, leaving subsequent page ranges (1 to 140) completely unchanged
+  - [x] Verify static Next.js build compiles successfully (`npm run build`)
+
 
 ## Section 2: Future Updates
 
