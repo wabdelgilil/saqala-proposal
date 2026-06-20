@@ -252,6 +252,13 @@ This document lists all tasks that have been successfully implemented and verifi
   - Optimized the color and layout rendering inside [globals.css](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/globals.css) to make diagram paths, arrows, badges, and labels render with darker colors and thicker strokes in both standard color print mode and grayscale print mode.
   - Forced all headings, paragraphs, and tables to render in deep, high-contrast text (`#0f172a` or `#000000`) globally in print mode.
   - Verified static Next.js production build (`npm run build`) compiles successfully.
+- **Tree-Structured Table of Contents (فهرس شجري):**
+  - Created a new React component [TableOfContents.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/components/TableOfContents.tsx) that renders an elegant, hierarchical tree-structured index on a single A4 page.
+  - Designed the layout in 2 columns using a parent-child folder directory style with horizontal tree connector lines showing all 10 parts, subtopics, and exact page ranges.
+  - Embedded the `<TableOfContents />` page inside the Full Study page ([page.tsx](file:///d:/programming/New%20folder%20(2)/saqala-proposal/src/app/all/page.tsx)) immediately following the cover page and preceding Section 1.
+  - Bypassed the page numbering counter on the index page by omitting the `pageNum` prop to ensure the rest of the study's page numbers (1 to 140) remain unchanged.
+  - Verified static Next.js production build (`npm run build`) compiles successfully.
+
 
 
 

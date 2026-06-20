@@ -1,6 +1,7 @@
 "use client";
 
 import CoverPage from "@/components/CoverPage";
+import TableOfContents from "@/components/TableOfContents";
 import Section01 from "@/app/sections/s01-maktab";
 import Section02 from "@/app/sections/s02-tawheed";
 import Section03 from "@/app/sections/s03-makhazen";
@@ -17,8 +18,10 @@ export default function ProposalPage() {
   return (
     <div className="w-full bg-[#f1f5f9] min-h-screen relative print:bg-white print:w-auto py-2 print:p-0 print:m-0">
       <CoverPage />
+      <TableOfContents />
 
       <Section01 />
+
       <Section02 />
       <Section03 />
       <Section04 />
